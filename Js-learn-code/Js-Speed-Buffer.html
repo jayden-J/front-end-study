@@ -37,8 +37,8 @@
                 clearInterval(timer);
                 var oDiv=document.getElementById("div1");
                 timer=setInterval(function(){
-                    var speed=Math.floor((iTarge-oDiv.offsetLeft)/20);
-
+                    var speed=(iTarge-oDiv.offsetLeft)/20;
+                    speed=speed>0?Math.ceil(speed):Math.floor(speed);
                     if (oDiv.offsetLeft == iTarge) {
                         clearInterval(timer);
                     }
