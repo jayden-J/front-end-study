@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSspeed</title>
+    <style type="text/css">
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            position: absolute;left: -200px;top: 0px;
+        }
+        #div1 span{
+            width: 20px;
+            height: 50px;
+            background: #00f; color: #fff;
+            position: absolute; left: 200px; top: 75px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <span id="share">分享</span>
+    </div>
+    <script type="text/javascript">
+        window.onload=function(){
+            var oDiv=document.getElementById("div1");
+            oDiv.onmouseover=function(){
+                startMove(0);
+        }
+            oDiv.onmouseout=function(){
+                startMove(-200);
+            }
+        }
+            var timer=null;
+            function    startMove(iTarge){
+                clearInterval(timer);
+                var oDiv=document.getElementById("div1");
+                timer=setInterval(function(){
+                    var speed=0;
+                    if (oDiv.offsetLeft>iTarge) {
+                        speed=-10;
+                    }
+                    else{
+                        speed=10;
+                    }
+                    if (oDiv.offsetLeft == iTarge) {
+                        clearInterval(timer);
+                    }
+                    else{
+                        oDiv.style.left=oDiv.offsetLeft+speed+'px';
+                    }
+                },30)
+            }
+    </script>
+
+</body>
+</html>
