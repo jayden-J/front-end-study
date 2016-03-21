@@ -1,4 +1,4 @@
-#**2016.03.17-2016.18学习小记之JavaScript Date（日期）对象**
+#**2016.03.17-18学习小记之JavaScript Date（日期）对象**
 
 ##JavaScript Date（日期）对象
 
@@ -33,3 +33,5 @@
 | getMinutes()  | 返回Date对象的分钟             |
 | getSeconds()  | 返回Date对象的秒数             |
 | getTime()     | 返回1970年1月1日至今的毫秒数                               |
+
+完整的DOM对象方法手册请参考[w3school](http://www.w3school.com.cn/jsref/jsref_obj_date.asp)
