@@ -11,9 +11,7 @@ th,td{vertical-align: top;}
 </style>
 </head>
 <body>
-<!--
-    这是一个HTML表格，其中包含<input>元素可以用来输入数据。程序将在<span>元素中显示计算结果，这些元素都具有类似“interset”和“years”的id这些id将在表格下面的JavaScript代码中用到。我们注意到，有一些input元素定义了“onchange”或者“onclick”的事件处理程序，以便用户在输入数据或者点击inputs的时候执行指定的JavaScript代码段。
--->
+这是一个HTML表格，其中包含<input>元素可以用来输入数据。程序将在<span>元素中显示计算结果，这些元素都具有类似“interset”和“years”的id这些id将在表格下面的JavaScript代码中用到。我们注意到，有一些input元素定义了“onchange”或者“onclick”的事件处理程序，以便用户在输入数据或者点击inputs的时候执行指定的JavaScript代码段。
 <table>
     <tr>
         <th>Enter Loan Data:</th>
@@ -62,6 +60,17 @@ th,td{vertical-align: top;}
         </td>
     </tr>
 </table>
+<!-- 随后是JavaScript代码，这些代码内嵌在一个<script>标签里 -->
+<!-- 通常情况下，这些脚本代码应当放在<head>标签中 -->
+<!-- 将JavaScript代码放在HTML代码之后仅仅是为了便于理解 -->
+<script type="text/javascript">
+    "use strict";//如果浏览器支持则开启ECMAscript 5的严格模式
+    /*
+    * 这里的脚本定义了calculate()，在HTML代码中绑定事件处理程序时会调用它.
+    * 这个函数从<input>中读取数据，计算贷款赔付信息，并将结果显示在<span>元素中
+    *
+    */
+</script>
 </body>
 
 </html>
