@@ -68,8 +68,32 @@ th,td{vertical-align: top;}
     /*
     * 这里的脚本定义了calculate()，在HTML代码中绑定事件处理程序时会调用它.
     * 这个函数从<input>中读取数据，计算贷款赔付信息，并将结果显示在<span>元素中
-    *
+    *同样，这里还保存了用户数据，展示了放贷人链接并绘制出了图表
     */
+   function calculate() {
+    // 查找文档中用于输入输出的元素
+    var amount=document.getElementById("amount");
+    var apr=document.getElementById("apr");
+    var years=document.getElementById("years");
+    var zipcode=document.getElementById("zipcode");
+    var payment=document.getElementById("payment");
+    var total=document.getElementById("payment");
+    var totalinterest=document.getElementById("totalinterest");
+
+    // 假设所有的输入都是合法的，将从input元素中获取输入数据
+    // 将百分比格式转换成小数格式，并从年利率转换成月利率
+    // 将年度赔付转换成月度赔付
+    var principal=parseInt(amount.Value);
+    var interest=parseInt(apr.Value) / 100 / 12;
+    var payments=parseInt(years.Value) * 12;
+
+    // 现在计算月度赔付的数据
+    var x=Math.pow(1+interest,payments);//math.pow进行幂次运算
+    var monthly=(principal*x*interest)/(x-1);
+
+    // 如果结果没有超过JavaScript能表示的数字范围，且用户的输入也正确，这里所显示的结果就是合法的。
+    if (isFinite(monthly)) {}
+}
 </script>
 </body>
 
