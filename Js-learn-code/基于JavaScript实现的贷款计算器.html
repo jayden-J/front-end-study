@@ -105,7 +105,12 @@ th,td{vertical-align: top;}
         try{//捕获这段代码抛出的所有异常
             getLenders(amount.value,apr.value,years.value,zipcode.value)
         }
+    catch(e)    {/*忽略这些异常*/}
+
+    //最后，用图标来展示贷款余额，利息和资产收益
+    chart (principal,interest,monthly,payments);
     }
+    else
 }
 </script>
 </body>
