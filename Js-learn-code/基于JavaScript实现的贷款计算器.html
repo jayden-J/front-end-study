@@ -13,52 +13,32 @@ th,td{vertical-align: top;}
 <body>
 <!-- 这是一个HTML表格，其中包含<input>元素可以用来输入数据。程序将在<span>元素中显示计算结果，这些元素都具有类似“interset”和“years”的id这些id将在表格下面的JavaScript代码中用到。我们注意到，有一些input元素定义了“onchange”或者“onclick”的事件处理程序，以便用户在输入数据或者点击inputs的时候执行指定的JavaScript代码段。 -->
 <table>
-    <tr>
-        <th>Enter Loan Data:</th>
+    <tr><th>Enter Loan Data:</th>
         <td></td>
-        <th>Loan Balance,Cumulative Equity,and Interest Payments</th>
-    </tr>
-    <tr>
-        <td>Amount of the loan ($) :</td>
+        <th>Loan Balance,Cumulative Equity,and Interest Payments</th></tr>
+    <tr><td>Amount of the loan ($) :</td>
         <td><input onchange="calculate();" id="amount"></td>
         <td rowspan=8>
-            <canvas id="graph" width="400" height="250"></canvas>
-        </td>
-    </tr>
-    <tr>
-        <td>Annual interest (%) :</td>
-        <td><input  id="apr" onchange="calculate();"></td>
-    </tr>
-    <tr>
-        <td>Repayment period (years) :</td>
-        <td><input onchange="calculate();" id="years"></td>
-    </tr>
-    <tr>
-        <td>Zipcode (to find lenders)</td>
-        <td><input onchange="calculate();" id="zipcode"></td>
-    </tr>
-    <tr>
-        <th>Approximate Payments :</th>
-        <td><button onclick="calculate();">Calculate</button></td>
-    </tr>
-    <tr>
-        <td>Monthly payment:</td>
-        <td>$<span class="output" id="payment"></span></td>
-    </tr>
+            <canvas id="graph" width="400" height="250"></canvas></td></tr>
+    <tr><td>Annual interest (%) :</td>
+        <td><input  id="apr" onchange="calculate();"></td></tr>
+    <tr><td>Repayment period (years) :</td>
+        <td><input onchange="calculate();" id="years"></td></tr>
+    <tr><td>Zipcode (to find lenders):</td>
+        <td><input onchange="calculate();" id="zipcode"></td></tr>
+    <tr><th>Approximate Payments :</th>
+        <td><button onclick="calculate();">Calculate</button></td></tr>
+    <tr><td>Monthly payment:</td>
+        <td>$<span class="output" id="payment"></span></td></tr>
     <tr>
         <td>Total payment :</td>
         <td>$<span class="output" id="total"></span></td>
     </tr>
+    <tr><td>Total interest:</td>
+        <td>$<span class="output" id="totalinterest"></span></td></tr>
     <tr>
-        <td>Total interest:</td>
-        <td>$<span class="output" id="totalinterest"></span></td>
-    </tr>
-    <tr>
-        <th>Sponsors:</th>
-        <td colspan="2">Apply for your loan with one of these fine lenders :
-            <div id="lenders"></div>
-        </td>
-    </tr>
+        <th>Sponsors:</th><td colspan="2">Apply for your loan with one of these fine lenders :
+            <div id="lenders"></div></td></tr>
 </table>
 <!-- 随后是JavaScript代码，这些代码内嵌在一个<script>标签里 -->
 <!-- 通常情况下，这些脚本代码应当放在<head>标签中 -->
@@ -124,26 +104,24 @@ th,td{vertical-align: top;}
 //如果你在浏览器按照file://URL的方式直接打开本地文件
 //则无法在某些浏览器中使用存储功能（如Firefox）
 //而通过HTTP打开文件是可行的
-function save(amount,apr,years,zipcode){
+function save(amount, apr, years, zipcode) {
     if (window.localStorage) {
-        localStorage.loan_amonut=amount;
-        localStorage.loan_apr=apr;
-        localStorage.loan_years=years;
-        localStorage.loan_zipcode=zipcode;
-
+        localStorage.loan_amount = amount;
+        localStorage.loan_apr = apr;
+        localStorage.loan_years = years;
+        localStorage.loan_zipcode = zipcode;
     }
 }
-
 // 在文档首次加载时，尝试还原输入字段
 window.onload=function(){
     // 如果浏览器支持本地存储且上次保存的值是存在的
-    if (window.localStorage && localStorage.loan_amonut) {
-        document.getElementById("amount").value=localStorage.loan_amonut;
-        document.getElementById("apr").value=localStorage.loan_apr;
-        document.getElementById("years").value=localStorage.loan_years;
-        document.getElementById("zipcode").value=localStorage.loan_zipcode;
+    if (window.localStorage && localStorage.loan_amount) {
+        document.getElementById("amount").value = localStorage.loan_amount;
+        document.getElementById("apr").value = localStorage.loan_apr;
+        document.getElementById("years").value = localStorage.loan_years;
+        document.getElementById("zipcode").value = localStorage.loan_zipcode;
     }
-}
+};
 
 //将用户的输入发送至服务器端脚本（理论上）将返回一个本地放贷人的链接列表，在这个例子中并没有实现这种查找放贷人的服务，但如果该服务存在，该函数会使用它
 function getLenders(amount,apr,years,zipcode){
@@ -155,11 +133,11 @@ function getLenders(amount,apr,years,zipcode){
     if (!ad) return;
 
     //将用户的输入数据进行URL编码，并作为查询参数附加在URL里
-    var url="getLenders.php"+
-    "?amt="+encodeURIComponent(amount)+
-    "&apr="+encodeURIComponent(apr)+
-    "&yrs="+encodeURIComponent(years)+
-    "&zip="+encodeURIComponent(zipcode);
+   var url = "getLenders.php" +
+        "?amt=" + encodeURIComponent(amount) +
+        "&apr=" + encodeURIComponent(apr) +
+        "&yrs=" + encodeURIComponent(years) +
+        "&zip=" + encodeURIComponent(zipcode);
 
     //通过XMLHttpRequest对象来提取返回数据
     var req=new XMLHttpRequest();  //发起一个新的请求
@@ -168,7 +146,7 @@ function getLenders(amount,apr,years,zipcode){
 
     // 在返回数据之前，注册了一个事件处理函数，这个处理函数将会在服务器的响应返回至客户端的时候调用，这种异步编程在客户端JavaScript中是非常常见的
     req.onreadystatechange=function(){
-        if (req.readyState===4&&req.status===200){
+        if (req.readyState==4&&req.status==200){
             // 如果代码运行到这里，说明我们得到了一个合法且完整的HTTP响应
             var response=req.responseText;//HTTP响应是以字符串形式出现的
             var lenders=JSON.parse(response);   //将其解析为JS数组
@@ -226,7 +204,7 @@ function chart(principal,interest,monthly,payments){
         g.lineTo(paymentToX(p),amountToY(equity));//将数据绘制到画布上
     }
     g.lineTo(paymentToX(payments),amountToY(0));//将数据线绘制到X轴
-    g.closePath;//将线条结尾连接至线条开头
+    g.closePath();//将线条结尾连接至线条开头
     g.fillStyle="green";//使用绿色绘制图形
     g.fill();//曲线之下的部分均填充
     g.fillText("Total Equity",20,35);//文本颜色设置为绿色
@@ -235,7 +213,7 @@ function chart(principal,interest,monthly,payments){
     var bal=principal;
     g.beginPath();
     g.moveTo(paymentToX(0),amountToY(bal));
-    for (var p = 1; p <=paymentToX; p++) {
+    for (var p = 1; p <=payments; p++) {
         var thisMonthsInterest=bal*interest;
         bal -=(monthly-thisMonthsInterest); //得到资产额
         g.lineTo(paymentToX(p),amountToY(bal));//将直线连接至某点
@@ -251,9 +229,9 @@ function chart(principal,interest,monthly,payments){
     for(var year=1;year*12<=payments;year++){//遍历每年
         var x=paymentToX(year*12); //计算标记位置
         g.fillRect(x-0.5,y-3,1,3);  //开始绘制标记
-        if (year==1) {g.fillText("year",x,y-5);} //在坐标轴做标记
-        if(year%5==5 && year*12!=payments)  //每五年的数据
-        {g.fillText(String(year),x,y-5);}
+        if (year==1) g.fillText("year",x,y-5); //在坐标轴做标记
+        if(year%5==0 && year*12!=payments)  //每五年的数据
+        g.fillText(String(year),x,y-5);
     }
 
     //将赔付数额标记在右边界
