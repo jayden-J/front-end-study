@@ -259,8 +259,13 @@ function chart(principal,interest,monthly,payments){
     //将赔付数额标记在右边界
     g.textAlign="right";
     g.textBaseline="middle";
-    var
-
+    var ticks=[monthly*payments,principal];
+    var rightEdge=paymentToX(payments);
+    for (var i = 0; i < ticks.length; i++) {
+        var y=amountToY(ticks[i]);
+        g.fillRect(rightEdge-3,y-0.5,3,1);
+        g.fillText(String(ticks[i].toFixed(0)),rightEdge-5,y);
+    }
 }
 </script>
 </body>
