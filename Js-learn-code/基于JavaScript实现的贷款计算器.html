@@ -191,7 +191,8 @@ function chart(principal,interest,monthly,payments){
     var graph=document.getElementById("graph");
     graph.width=graph.width;    //用一种巧妙的方法清除并重置画布
 
-    //
+    //如果不传入参数，或者浏览器不支持画布，则直接返回
+    if (arguments.length == 0 && !graph.getContext) return;
 }
 </script>
 </body>
