@@ -110,7 +110,63 @@ th,td{vertical-align: top;}
     //最后，用图标来展示贷款余额，利息和资产收益
     chart (principal,interest,monthly,payments);
     }
-    else
+    else{
+        //计算结果不是数字或者无穷大，意味着输入数据时非法或不完整的
+        //清空之前的输出数据
+        payment.innerHTML="";
+        total.innerHTML="";
+        totalinterest.innerHTML="";
+        chart();
+    }
+}
+//将用户的输入 保存至localStorage对象的属性中
+//这些属性在再次访问时会继续保持在原位置
+//如果你在浏览器按照file://URL的方式直接打开本地文件
+//则无法在某些浏览器中使用存储功能（如Firefox）
+//而通过HTTP打开文件是可行的
+function save(amount,apr,years,zipcode){
+    if (window.localStorage) {
+        localStorage.loan_amonut=amount;
+        localStorage.loan_apr=apr;
+        localStorage.loan_years=years;
+        localStorage.loan_zipcode=zipcode;
+
+    }
+}
+
+// 在文档首次加载时，尝试还原输入字段
+window.onload=function(){
+    // 如果浏览器支持本地存储且上次保存的值是存在的
+    if (window.localStorage && localStorage.loan_amonut) {
+        document.getElementById("amount").value=localStorage.loan_amonut;
+        document.getElementById("apr").value=localStorage.loan_apr;
+        document.getElementById("years").value=localStorage.loan_years;
+        document.getElementById("zipcode").value=localStorage.loan_zipcode;
+    }
+}
+
+//将用户的输入发送至服务器端脚本（理论上）将返回一个本地放贷人的链接列表，在这个例子中并没有实现这种查找放贷人的服务，但如果该服务存在，该函数会使用它
+function getLenders(amount,apr,years,zipcode){
+    //如果浏览器不支持XMLHttpRequest对象，则退出
+    if (!window.XMLHttpRequest) return;
+
+    // 找到要显示放贷人列表的元素
+    var ad=document.getElementById("lenders");
+    if (!ad) return;
+
+    //将用户的输入数据进行URL编码，并作为查询参数附加在URL里
+    var url="getLenders.php"+
+    "?amt="+encodeURIComponent(amount)+
+    "&apr="+encodeURIComponent(apr)+
+    "&yrs="+encodeURIComponent(years)+
+    "&zip="+encodeURIComponent(zipcode);
+
+    //通过XMLHttpRequest对象来提取返回数据
+    var req=new XMLHttpRequest();  //发起一个新的请求
+    req.open("GET", url);  //通过URL发起一个
+    req.send(null);
+
+
 }
 </script>
 </body>
