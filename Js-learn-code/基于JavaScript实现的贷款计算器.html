@@ -163,11 +163,30 @@ function getLenders(amount,apr,years,zipcode){
 
     //通过XMLHttpRequest对象来提取返回数据
     var req=new XMLHttpRequest();  //发起一个新的请求
-    req.open("GET", url);  //通过URL发起一个
-    req.send(null);
+    req.open("GET", url);  //通过URL发起一个HTTP GET 请求
+    req.send(null); //不带任何正文发起这个请求
 
+    // 在返回数据之前，注册了一个事件处理函数，这个处理函数将会在服务器的响应返回至客户端的时候调用，这种异步编程在客户端JavaScript中是非常常见的
+    req.onreadystatechange=function(){
+        if (req.readyState===4&&req.status===200){
+            // 如果代码运行到这里，说明我们得到了一个合法且完整的HTTP响应
+            var response=req.responseText;//HTTP响应是以字符串形式出现的
+            var lenders=JSON.parse(response);   //将其解析为JS数组
 
+            // 将数组中的放贷人对象转换成HTML字符串形式
+            var list="";
+            for (var i = 0;i<lenders.length; i++) {
+                list += "<li><a href='" + lenders[i].url + "'>"+lenders[i].name+"</a>";
+            }
+
+            //将数据在HTML元素中呈现出来
+            ad.innerHTML="<ul>"+list+"</ul>";
+        }
+    }
 }
+
+//在HTML<canvas>元素中用图表展示月度贷款余额、利息和资产收益
+//如果不传入参数的话，则清空之前的图表数据
 </script>
 </body>
 
