@@ -26,7 +26,7 @@ th,td{vertical-align: top;}
         </td>
     </tr>
     <tr>
-        <td>Annual interest ($) :</td>
+        <td>Annual interest (%) :</td>
         <td><input  id="apr" onchange="calculate();"></td>
     </tr>
     <tr>
@@ -77,15 +77,15 @@ th,td{vertical-align: top;}
     var years=document.getElementById("years");
     var zipcode=document.getElementById("zipcode");
     var payment=document.getElementById("payment");
-    var total=document.getElementById("payment");
+    var total=document.getElementById("total");
     var totalinterest=document.getElementById("totalinterest");
 
     // 假设所有的输入都是合法的，将从input元素中获取输入数据
     // 将百分比格式转换成小数格式，并从年利率转换成月利率
     // 将年度赔付转换成月度赔付
-    var principal=parseInt(amount.Value);
-    var interest=parseInt(apr.Value) / 100 / 12;
-    var payments=parseInt(years.Value) * 12;
+    var principal=parseFloat(amount.Value);
+    var interest=parseFloat(apr.Value) / 100 / 12;
+    var payments=parseFloat(years.Value) * 12;
 
     // 现在计算月度赔付的数据
     var x=Math.pow(1+interest,payments);//math.pow进行幂次运算
