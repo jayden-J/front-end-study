@@ -236,8 +236,17 @@ function chart(principal,interest,monthly,payments){
     g.beginPath();
     g.moveTo(paymentToX(0),amountToY(bal));
     for (var p = 1; p <=paymentToX; p++) {
-i]
+        var thisMonthsInterest=bal*interest;
+        bal -=(monthly-thisMonthsInterest); //得到资产额
+        g.lineTo(paymentToX(p),amountToY(bal));//将直线连接至某点
     }
+    g.lineWidth=3;//将直线宽度加粗
+    g.stroke(); //绘制余额的曲线
+    g.fillStyle="black";//使用黑色字体
+    g.fillText("Loan Balance",20,50); //图例文字
+
+    // 将年度数据在X轴作标记
+
 
 }
 </script>
