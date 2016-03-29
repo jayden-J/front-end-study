@@ -73,4 +73,11 @@ for (var i=0;i<10;i++){
 var samenums=nums;
 nums[0]=400;
 print(samenums[0]); //显示400
+
+<!-- 使用深复制，将原数组的每一个元素都复制到新书组中 -->
+function copy(arr1,arr2){
+    for (var i=0;i<arr1.length;i++){
+        arr2[i]=arr1[i];
+    }
+}
 ```
