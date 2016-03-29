@@ -15,7 +15,15 @@ print(numbers.length); //显示0
 var numbers=[1,2,3,4,5]; //也可以在声明数组变量时，直接在[]内放入一组元素。
 print(numbers.length); //显示5
 
-var numbers=new Array();
+var numbers=new Array(); //还可以调用array的构造函数来创建数组。
+print(numbers.length); //显示0
+
+var numbers=new Array(1,2,3,4,5);
+print(numbers.length); //显示5
+
+var numbers=new Array(10); //在调用Array的构造函数时，可以只传入一个参数用来指定数组的长度
+print(numbers.length); //显示10
+
 
 
 ```
