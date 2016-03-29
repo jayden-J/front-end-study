@@ -24,6 +24,7 @@ print(numbers.length); //显示5
 var numbers=new Array(10); //在调用Array的构造函数时，可以只传入一个参数用来指定数组的长度
 print(numbers.length); //显示10
 
+var objects=[1,"joe",ture,null]; //在JavaScript中数组中的元素不必是同一种数据类型
 
 
 ```
