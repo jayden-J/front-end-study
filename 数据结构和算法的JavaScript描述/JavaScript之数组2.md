@@ -86,5 +86,17 @@
 ####7. 为数组排序
 ```
 <!-- 使用reverse()方法可以将数组中元素的顺序进行翻转 -->
+var nums=[1,2,3,4,5];
+nums.reverse();
+print(nums);//5,4,3,2,1
 <!-- 使用sort()方法也可以对数组进行排序。-->
+    - 如果元素是字符串类型，那么sort()方法将按照字典顺序对元素进行排序
+        > var nums=["David","Mike","Bryan"];
+        > names.sort();
+        > print(names);//Bryan,David,Mike
+    - 但是当数组的元素是数字类型时，sort()方法会假定元素都是字符串类型，因此会导致排序的结果混乱。所以可以饮用一个大小比较函数，那么在排序时，sort()方法会根据该函数比较数组中两个元素的大小，从而决定整个数组的顺序。
+        > function compare(num1,num2){return num1-num2;}
+        > var nums=[3,1,2,100,4,200];
+        > nums.sort(compare);
+        > print(nums);//1,2,3,4,100,200
 ```
