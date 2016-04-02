@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form 和 elements</title>
+</head>
+<body>
+    <form onsubmit="show(this);return false">
+        姓名：<input name='name'></input><br />
+        密码：<input name='password' type="password"></input><br /> <br />
+        <input name="submit" type="submit"></input>
+        <input name="reset" type="reset"></input>
+    </form>
+    <script type="text/javascript">
+        function show(form){
+            var str="";
+            for (var i = 0; i < form.length; i++) {
+                str+=form.elements[i].name+"="+form.elements[i].value+"<br/>";
+            }
+            document.write(str);
+        }
+    </script>
+</body>
+</html>
