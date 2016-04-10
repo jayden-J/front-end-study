@@ -40,33 +40,61 @@
 
         <article>
             <h2>最后的标题</h2>
+
             <ol>
                 <li>小明</li>
                 <li>小红</li>
                 <li>小兰</li>
+                </ol>
+                <p>这是一个表格~</p>
                 <table border="1px">
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
+                        <td>表头</td>
+                        <td>表格单元内容</td>
+                        <td>表格单元内容</td>
                     </tr>
                        <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
+                        <td>表头</td>
+                        <td>表格单元内容</td>
+                        <td>表格单元内容</td>
                     </tr>
                        <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
+                        <td>表头</td>
+                        <td>表格单元内容</td>
+                        <td>表格单元内容</td>
                     </tr>
                        <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
+                        <td>表头</td>
+                        <td>表格单元内容</td>
+                        <td>表格单元内容</td>
                     </tr>
                 </table>
-            </ol>
+                <h3>侧栏注册窗口</h3>
+                <form>
+                    <label for="email">请输入邮箱地址：</label>
+                    <input id="email" type="text" value="这是一个文本输入框"></input>
+                    <br/>
+                    <label for="password">请输入密码：</label><input id="password" type="password"></input>
+                    <br />
+                </form>
+                <form action="" method="post">
+                    <label>性别：</label>
+                    <input type="radio" checked="checked" name="Sex" value="male" />男
+                    <input type="radio" name="Sex" value="female" />女
+                    <label>城市：</label>
+                    <select>
+                        <option value="北京">北京</option>
+                        <option value="上海">上海</option>
+                        <option value="广州">广州</option>
+                        <label>爱好：</label>
+                        <input type="checkbox" name="checkbox1" value="checkbox">运动
+                        <input type="checkbox" name="checkbox2" value="checkbox">艺术
+                        <input type="checkbox" name="checkbox3" value="checkbox">科学
+                        <label>个人描述：</label>
+                        <textarea name="MSG" cols=30 rows=2>输入你的个人描述</textarea>
+                        <input type="submit" value="确认提交"/>
+                    </select>
+                </form>
         </article>
 </body>
 </html>
