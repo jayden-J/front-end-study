@@ -10,8 +10,9 @@
     3. page层
         - 完成页面内的功能需求
 2. 典型的JavaScript兼容问题。
-    1.透明度：IE下透明度通过滤镜实现，Firefox下透明度通过CSS的opacity属性实现。可使用如下代码来解决。
-    ```
+    1. 透明度：IE下透明度通过滤镜实现，Firefox下透明度通过CSS的opacity属性实现。可使用如下代码来解决。
+
+        ```
     <style type="text/css">
     #test1{background: blue;height: 100px;}
     #test2{background:green;height:100px;}
@@ -27,4 +28,39 @@
         setOpacity("test1",20);
         setOpacity("test2",80);
     </script>
-    ```
+        ```
+    2. event对象：IE中event对象作为window的属性作用于全局作用域，在Firefox中event对象是作为事件的参数存在的。
+
+        ```
+        <script type="text/javascript">
+        function getEventTarget(e){
+            e=window.event || e;
+            return e.srcElement || e.target;
+        }
+        </script>
+        ```
+    3. 冒泡
+    
+        ```
+        阻止事件冒泡
+        <script type="text/javascript">
+            function stopPropagation(e){
+                e=window.event|| e;
+                if(document.all){e.cancelBubble=true;}
+                else{e.stopPropagation();}
+            }
+        </script>
+        ```
+    4. on、attachEvent和addEventListener
+        ```
+        <script type="text/javascript">
+            function on(node,eventType,handler){
+                node=typeof node=="string"?document.getElementById(node):node;
+                if(document.all){
+                    node.attachEvent("on"+eventType,handler);
+                }
+                else{node.addEventListener(eventType,handler,false);}
+            }
+        </script>
+        ```
+3. JavaScript库：常见：Prototype、Dojo、jQuery、YUI等。
