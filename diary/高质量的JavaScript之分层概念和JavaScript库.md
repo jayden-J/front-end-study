@@ -52,6 +52,7 @@
         </script>
         ```
     4. on、attachEvent和addEventListener
+
         ```
         <script type="text/javascript">
             function on(node,eventType,handler){
