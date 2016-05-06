@@ -1,137 +1,223 @@
-*{margin: 0;padding: 0;}
-
-body{
-    background: #DEDEDE;
-    font-family:'Microsoft YaHei';
+*
+{
+    margin: 0;
+    padding: 0;
 }
 
-header{
+body
+{
+    font-family: 'Microsoft YaHei';
+
+    background: #dedede;
+}
+
+header
+{
     position: relative;
+
     height: 60px;
+
     background: #333;
 }
-.icon {
-    height: 50px;
+
+.icon
+{
     width: 50px;
-    padding-left: 20px;
+    height: 50px;
     padding-top: 5px;
+    padding-left: 20px;
 }
-.bannerList{
+
+.bannerList
+{
     position: absolute;
     top: 0;
     right: 20px;
 }
 
-.bannerList li{
-    text-align: center;
-    width: 60px;
+.bannerList li
+{
     display: block;
     float: left;
-    padding:20px 10px;
-}
-.bannerList li a{
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-}
-.bannerList li:hover{
-    border-bottom: 1px solid red;
-    background: #474747;
-    border-radius: 3px;
 
+    width: 60px;
+    padding: 20px 10px;
+
+    text-align: center;
 }
+
+.bannerList li a
+{
+    font-size: 15px;
+
+    text-decoration: none;
+
+    color: white;
+}
+
+.bannerList li:hover
+{
+    border-bottom: 1px solid red;
+    border-radius: 3px;
+    background: #474747;
+}
+
 
 /*主体部分*/
-article, aside{
-    display:block;
-    margin:30px;padding:20px;
-    background:white;
-    box-shadow:1px 7px 2px 1px #CCC;
+
+article,
+aside
+{
+    display: block;
+
+    margin: 30px;
+    padding: 20px;
+
     border-radius: 5px;
+    background: white;
+    box-shadow: 1px 7px 2px 1px #ccc;
 }
-.firstText{
-    padding:5px 0;
+
+.firstText
+{
+    padding: 5px 0;
 }
-.secondText{
-    padding: 10px 0;
-    color:#808080;
+
+.secondText
+{
     font-size: 15px;
+
+    padding: 10px 0;
+
+    color: #808080;
 }
-.articleText{
+
+.articleText
+{
     font-size: 12px;
 }
-article a{
-    color:blue;
+
+article a
+{
+    color: blue;
 }
-article a:hover{
-    color:red;
+
+article a:hover
+{
+    color: red;
 }
-.auther, .aTime{
-    line-height:30px;
-    color:#808080;
-    font-size:12px;
+
+.auther,
+.aTime
+{
+    font-size: 12px;
+    line-height: 30px;
+
+    color: #808080;
 }
-.photo{
-    height: 100px;
+
+.photo
+{
     width: 150px;
+    height: 100px;
 }
+
+
 /*列表*/
-article ul li{
-    list-style-type:none;
+
+article ul li
+{
+    list-style-type: none;
 }
-article ol{
+
+article ol
+{
     margin: 10px 40px;
 }
+
+
 /*表格*/
-article table{
-    width:100%;
-    border-collapse: collapse;/*设置表格的边框被合并为一个单一的边框*/
+
+article table
+{
+    width: 100%;
+
+    border-collapse: collapse;
+    /*设置表格的边框被合并为一个单一的边框*/
 }
-article table tr th{
-    color:white;
-    background:#333;
+
+article table tr th
+{
+    color: white;
+    background: #333;
 }
-article table tr td{
-    border:1px solid #ccc;
+
+article table tr td
+{
+    border: 1px solid #ccc;
 }
-article table .buttomTable{
-    background:#ccc;
+
+article table .buttomTable
+{
+    background: #ccc;
 }
+
 
 /*侧栏*/
-.asideh4{
+
+.asideh4
+{
+    line-height: 40px;
+
     height: 40px;
     padding-left: 10px;
-    line-height: 40px;
+
     border-left: 3px solid #808080;
 }
-aside form div{
+
+aside form div
+{
     font-size: 14px;
-    margin:15px 0;
+
+    margin: 15px 0;
 }
-.tips{
-    float:left;           /*添加后个人描述四个字才和文本域上对齐*/
-    text-align:right;
-    width:35%;
-    padding-right:15px;
+
+.tips
+{
+    float: left;
+
+    width: 35%;
+    padding-right: 15px;
+    /*添加后个人描述四个字才和文本域上对齐*/
+
+    text-align: right;
 }
-.labelText{
-    margin-left:35%;
-    padding-left:15px;
-    font-size:12px;
+
+.labelText
+{
+    font-size: 12px;
+
+    margin-left: 35%;
+    padding-left: 15px;
+
     color: #aaa;
 }
-aside textarea{
-    width:50%;
-    height:90px;
 
+aside textarea
+{
+    width: 50%;
+    height: 90px;
 }
-.submitButton{
-    width:100%;
-    height:40px;
+
+.submitButton
+{
+    font-size: 19px;
+
+    width: 100%;
+    height: 40px;
+
+    color: white;
+    border: none;
     border-radius: 10px;
     background: #128fdc;
-    color: white;
-    font-size: 19px;
-    border:none;
 }
