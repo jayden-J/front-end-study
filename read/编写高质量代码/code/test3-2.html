@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>常见模块</title>
+    <style type="text/css">
+    /*title module css*/
+
+    .title {
+        border-bottom: 1px dashed #fff;
+    }
+
+    .title h2 {
+        display: inline;
+    }
+
+    .title a {
+        text-align: right;
+        display: block;
+    }
+
+    .titleModule p {
+        text-indent: 2em;
+        line-height: 150%;
+        margin: 0 20px 20px 0;
+    }
+
+    .titleModule strong {
+        color: red;
+        font-weight: normal;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="titleModule">
+        <div class="title">
+            <h2>标签的语义</h2>
+            <a href="">更多&gt;&gt;</a>
+        </div>
+        <p>使用有良好语义的标签，能够很好地实现自我解释，方便搜索引擎理解网页的结构，抓取重要内容。去样式后也会<strong>根据浏览器的默认样式</strong>很好的组织网页内容，具有很好的可读性，从而实现对特殊终端的兼容。</p>
+        <p>虽然现在的标签很多，但有些标签已经不推荐使用了，我们经常用到的标签其实很少，我们只需要重点掌握这些常用标签就好了。</p>
+    </div>
+    <hr/>
+    <div class="formModule">
+        <form action="#" method="get">
+            <fieldset>
+                <legend>
+                    登录表单
+                </legend>
+                <p>
+                    <label for="name">账号：</label>
+                    <input type="text" id="name" />
+                </p>
+                <p>
+                    <label for="pw">密码：</label>
+                    <input type="password" id="pw" />
+                </p>
+                <button type="submit" class="subBtn">登录</button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="tableModule">
+        <table border="1">
+            <caption>几种页面实现的比较</caption>
+            <thead>
+                <tr>
+                    <th>实现方式</th>
+                    <th>代码量</th>
+                    <th>搜索引擎友好</th>
+                    <th>特殊终端兼容</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <th>table 布局</th>
+                        <td>多</td>
+                        <td>差</td>
+                        <td>一般</td>
+                    </tr>
+                    <tr>
+                        <th>乱用标签的 CSS 布局</th>
+                        <td>少</td>
+                        <td>一般</td>
+                        <td>差</td>
+                    </tr>
+                    <tr>
+                        <th>标签语义良好的 CSS 布局</th>
+                        <td>少</td>
+                        <td>好</td>
+                        <td>好</td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+    </div>
+</body>
+
+</html>
