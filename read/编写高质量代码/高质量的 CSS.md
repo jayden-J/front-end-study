@@ -1,5 +1,5 @@
 #高质量的 CSS
-1. 怪异模式。
+0. 怪异模式。
     - IE对于盒模型的解析：在标准模式中，网页元素的宽度是由 padding , border, width 三者的宽度相加决定的。在怪异模式中，width 本身就包括了 padding 和 border 的宽度。此外，标准模式下块级元素的经典居中的方法也无法在怪异模式中正常工作。
 2. 如何组织 CSS
     - 可将网站的所有样式，按照职能分成三大类：base、common 和 page 
@@ -46,3 +46,61 @@
         - id 的 CSS 选择符权重为 100，而 class 为 10。
         - 原生 JS 提供 getElementbyId() 方法。
         - 一般来说，id 不能重用，使用 id 会限制网页扩展性，最好尽量使用 class，少用 id。
+    3. CSS hack 
+        1. IE 条件注释法
+        
+            ```
+            <!-- 针对 IE 引入一个 CSS 文件 -->
+            <!-- [if IE] >
+            <link rel="stylesheet" type="text/css" href="test.css"/>
+            <! [endif] -->
+            <!-- 针对特定版本的 IE 浏览器加载 CSS 文件 -->
+            <!-- [ if IE 6]>
+            <link rel="stylesheet" type="text/css" href="test.css">
+            <![endif]  -->
+            <!-- 针对某个范围以内的 IE 进行 hack，可以结合 lte，lt，gte，gt，! 关键字来进行注释。其中 lte 表示“小于等于”，lt 表示“小于”，gte 表示“大于等于”，gt 表示大于，! 表示不等于。-->
+            <!-- [if ! IE7] >
+            <link rel="stylesheet" type="text/css" href="test.css">
+            <![endif] -->
+            <!-- 这种方法不仅适用于引进 link 标签，同时适用于直接定义 CSS 以及 JS -->
+            ```
+
+        2. 选择符前缀法
+            
+            ```
+            <!-- 在 CSS 选择符前加一些只有特定浏览器才能是别的前缀，从而让某些样式只对特定浏览器生效。例如“ *html ”只对 IE6 生效，“ *+html ”只对 IE7 生效。 -->
+            <style type="text/css">
+            .test {width:80px;}
+            *html .test {width:60px;}
+            *+html .test {width:70px;}
+            </style>
+            ```
+
+        3. 样式符前缀法
+
+            ```
+            <!-- 在样式的属性名前面加前缀。例如“_”只在 IE6 生效，“*”在 IE6 和 IE7 都生效。 -->
+            <style type="text/css">
+            .test {width:80px;*width:70px;_width:60px;}
+            </style>
+            ```
+
+    4. 解决超链接访问后 hover 样式不出现的问题
+    
+        这种问题常常是因为把 a 标签的四种状态的顺序放反了。关于 a 标签的四种状态的排序问题，有一个 love hate 原则，即：l**(link)**ov**(visited)**e h**(hover)**a**(active)**te。
+
+    5. hasLayout
+    
+        使用“ zoom:1 ”可以触发 IE的hasLayout 属性。
+    
+    6. 块级元素和行内元素的区别
+        - 常见块级元素：div、p、form、ul、ol、li 等；常见的行内元素有 span、strong、em 等。
+        - 块级元素会独占一行，默认情况下，其宽度自动填满其父元素，行内元素不会独占一行，相邻的行内元素会排列在同一行内，直到一行排不下，才会换行。
+        - 块级元素可以设置 width、height 等属性，行内元素则无效。**注意：块级元素即使设置了宽度，仍然独占一行。**
+        - 块级元素可以设置 margin 和 padding 属性。行内元素水平方向的 padding-left、padding-right、margin-left、margin-right 都会产生边距效果。但是其竖直方向的 padding 和 margin 不会产生边距效果。
+    7. display:inline-block 和 hasLayout
+        - display:inline-block 可以让行内元素拥有块级元素的特点：可以设置长宽，可以设置 margin 和 padding 值，但他却不是独占一行。
+    8. relative、absolute 和 float
+        - position:relative、position:absolute 可以该改变元素在文档流中的位置，同时可以让元素激活 left、top、right、bottom 和 z-index 属性。
+        - position:relative 会保留自己在 z-index:0 层的元素位置，不会对其他在 z-index:0 的元素造成影响。而position:absolute 
+        - 
