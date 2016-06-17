@@ -1,4 +1,3 @@
-#高质量的 CSS
 0. 怪异模式。
     - IE对于盒模型的解析：在标准模式中，网页元素的宽度是由 padding , border, width 三者的宽度相加决定的。在怪异模式中，width 本身就包括了 padding 和 border 的宽度。此外，标准模式下块级元素的经典居中的方法也无法在怪异模式中正常工作。
 2. 如何组织 CSS
@@ -103,3 +102,21 @@
     8. relative、absolute 和 float
         - position:relative、position:absolute 可以该改变元素在文档流中的位置，同时可以让元素激活 left、top、right、bottom 和 z-index 属性。
         - position:relative 会保留自己在 z-index:0 层的元素位置，不会对其他在 z-index:0 的元素造成影响。而position:absolute 会完全脱离文档流，不再在 z-index:0 层保留占位符，其 left、top、right、bottom 值是相对于自己最近的一个设置了 position:relative 或 position:absolute 的祖先元素的，如果祖先元素都没有设置 position:relative 或 position:absolute，那么就相对 body 元素。
+        - float 也能改变文档流,不同的是，float 属性不会让元素“上浮”到另一个 z-index 层，他只能通过 float:left 和 float:right 来控制元素在同层里“左浮”和“右浮”，并且 float 会改变正常的文档流排列，影响到其他元素。
+        - 不论是什么类型的元素，只要设置了 position:absolute、float:left 或 float:right 中的任意一个，都会让元素以 **display:inline-block** 的方式显示：可以设置长宽，默认宽度并不占满父元素。但是，**position:relative 却不会隐式改变 display 的类型**。
+    9. 居中
+        1. 水平居中
+          1. 文本、图片等行内元素的水平居中
+            ```
+          <style type="text/CSS">
+          .wrap{background: #000;width: 500px;height: 100px;margin-bottom: 10px;color: #fff;text-align: center}
+          </style>
+
+          <div class="wrap">hello world</div>
+          <div class="wrap"><img src="#" /></div>
+            ```
+          2. 确定宽度的块级元素的水平居中通过设置 margin-left:auto 和 margin-right:auto 来实现的。
+          3. 不确定宽度的块级元素的水平居中实现方式有三种。
+            ```
+            
+            ```
