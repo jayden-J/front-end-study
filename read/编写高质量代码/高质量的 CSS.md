@@ -111,12 +111,10 @@
           <style type="text/CSS">
           .wrap{background: #000;width: 500px;height: 100px;margin-bottom: 10px;color: #fff;text-align: center}
           </style>
-
           <div class="wrap">hello world</div>
           <div class="wrap"><img src="#" /></div>
             ```
           2. 确定宽度的块级元素的水平居中通过设置 margin-left:auto 和 margin-right:auto 来实现的。
           3. 不确定宽度的块级元素的水平居中实现方式有三种。
-            ```
-            
-            ```
+
+            第一种方法是通过 table 来帮组不确定宽度的块级元素的水平居中，即使不设置 table 元素的宽度
