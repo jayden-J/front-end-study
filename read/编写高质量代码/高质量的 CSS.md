@@ -117,4 +117,6 @@
             ```
           2. 确定宽度的块级元素的水平居中通过设置 margin-left:auto 和 margin-right:auto 来实现的。
           3. 不确定宽度的块级元素的水平居中实现方式有三种。
-            - 第一种方法是通过 table 来帮组不确定宽度的块级元素的水平居中，即使不设置 table 元素的宽度
+            - 第一种方法是通过 table 来帮组不确定宽度的块级元素的水平居中，即使不设置 table 元素的宽度，仅仅设置 margin-left:atuo 和 margin-right:auto 就可以使 table 水平居中。这样的坏处是增加了无语义标签，加深了标签的嵌套层数。
+            - 方法二通过将块级元素的 display 类型改为 inline，变成行内元素，然后用 text-align:center 来居中，好处是不用增加无语义标签，坏处是将块级元素变成了行内元素，而行内元素比起块级元素缺少一些功能，可能会带来一些限制。
+            - 方法三通过给父元素设置 float，然后父元素设置 position:relative 和 left:50%,子元素设置 position:relative 和 left:-50% 来实现水平居中，他可以保留块级元素仍以 display:block 的形式显示，而且没有添加无语义标签。缺点是设置了 position:relative，带来一定的副作用。
