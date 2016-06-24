@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test5-66</title>
+    <style media="screen">
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab {
+            width: 400px;
+        }
+
+        .tab-menuWrapper {
+            padding-left: 20px;
+        }
+
+        .tab-menuWrapper li {
+            float: left;
+            display: inline;
+            padding: 5px;
+            border: 1px solid #333;
+            border-bottom: none;
+            margin-right: 5px;
+        }
+
+        .tab-contentWrapper {
+            border: 1px solid #333;
+            clear: left;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <ul class="tab-menuWrapper">
+            <li id="tab-menu1">menu1</li>
+            <li id="tab-menu2">menu2</li>
+            <li id="tab-menu3">menu3</li>
+        </ul>
+        <div class="tab-contentWrapper">
+            <div id="tab-content1">content1</div>
+            <div id="tab-content2" style="display:none">content2</div>
+            <div id="tab-content3" style="display:none">content3</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // 获得 tabMenu 和 tabContent 的 DOM 节点，并保存在变量中
+        var tabMenu1 = document.getElementById('tab-menu1'),
+            tabMenu2 = document.getElementById('tab-menu2'),
+            tabMenu3 = document.getElementById('tab-menu3'),
+            tabContent1 = document.getElementById('tab-content1'),
+            tabContent2 = document.getElementById('tab-content2'),
+            tabContent3 = document.getElementById('tab-content3');
+
+        // 让 tabMenu 监听点击 click 事件
+        tabMenu1.onclick = function() {
+            // 显示 tabContent1,隐藏 tabContent2 和 tabContent3
+            tabContent1.style.display = "block";
+            tabContent2.style.display = "none";
+            tabContent3.style.display = "none";
+        }
+        tabMenu2.onclick = function() {
+            // 显示 tabContent2,隐藏 tabContent1 和 tabContent3
+            tabContent2.style.display = "block";
+            tabContent1.style.display = "none";
+            tabContent3.style.display = "none";
+        }
+        tabMenu3.onclick = function() {
+            // 显示 tabContent3,隐藏 tabContent1 和 tabContent2
+            tabContent3.style.display = "block";
+            tabContent2.style.display = "none";
+            tabContent1.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

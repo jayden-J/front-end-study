@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test5-66</title>
+    <style media="screen">
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab {
+            width: 400px;
+        }
+
+        .tab-menuWrapper {
+            padding-left: 20px;
+        }
+
+        .tab-menuWrapper li {
+            float: left;
+            display: inline;
+            padding: 5px;
+            border: 1px solid #333;
+            border-bottom: none;
+            margin-right: 5px;
+        }
+
+        .tab-contentWrapper {
+            border: 1px solid #333;
+            clear: left;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <ul class="tab-menuWrapper" id="tab-menuWrapper">
+            <li id="tab-menu1">menu1</li>
+            <li id="tab-menu2">menu2</li>
+            <li id="tab-menu3">menu3</li>
+        </ul>
+        <div class="tab-contentWrapper" id="tab-contentWrapper">
+            <div id="tab-content1">content1</div>
+            <div id="tab-content2" style="display:none">content2</div>
+            <div id="tab-content3" style="display:none">content3</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // 获得 tabMenu 和 tabContent 的 DOM 节点，并以数组的形式保存
+        var tabMenus=document.getElementById("tab-menuWrapper").getElementsByTagName('li'),
+        tabContents=document.getElementById("tab-contentWrapper").getElementsByTagName('div');
+
+        // 遍历数组，让 tabMenu 监听点击 click 事件
+      for (var i = 0; i < tabMenus.length; i++) {
+        (function(_i){tabMenus[_i].onlick=function(){
+          for (var j = 0; j < tabContents.length; j++) {
+            tabContents[j].style.display="none";
+          }
+          tabContents[_i].style.display="block";
+        }
+      })(i);
+      }
+    </script>
+</body>
+
+</html>
