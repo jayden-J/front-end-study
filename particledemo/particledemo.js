@@ -4,9 +4,9 @@
   var mousePos = [0, 0];
 
   var easingFactor = 5.0;
-  var backgroundColor = '#000';
-  var nodeColor = '#aaabac';
-  var edgeColor = '#aaabac';
+  var backgroundColor = '#faf5f7';
+  var nodeColor = 'rgba(170,171,172,0.5)';
+  var edgeColor = 'rgba(170,171,172,0.6)';
 
   var nodes = [];
   var edges = [];
