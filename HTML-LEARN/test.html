@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>test</title>
+</head>
+<body>
+  <input type="radio" name="test" id="test" style="width:0"/><label id="testtext" for="test">test</label>
+  <input type="radio" name="test" id="test1" style="width:0"/><label id="testtext1" for="test1">test</label>
+  <input type="radio" name="test" id="test2" style="width:0"/><label id="testtext2" for="test2">test</label>
+  <!-- <button onclick="test()">test</button> -->
+</body>
+<script type="text/javascript">
+var label=document.getElementsByTagName('label');
+var radio=document.getElementsByTagName('input');
+for (var i = 0; i < label.length; i++) {
+ (function(_i) {
+  label[_i].onclick=function(){
+   for (var j = 0; j < label.length; j++) {
+   label[j].style="color:#000";
+   label[_i].style="color:red";
+  }
+ };
+ })(i);
+}
+</script>
+</html>
