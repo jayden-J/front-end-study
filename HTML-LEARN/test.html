@@ -3,25 +3,45 @@
 <head>
  <meta charset="UTF-8">
  <title>test</title>
+ <style type="text/css">
+ .label1,.label2,.label3{
+  color: #ccc;
+ }
+ </style>
 </head>
 <body>
-  <input type="radio" name="test" id="test" style="width:0"/><label id="testtext" for="test">test</label>
-  <input type="radio" name="test" id="test1" style="width:0"/><label id="testtext1" for="test1">test</label>
-  <input type="radio" name="test" id="test2" style="width:0"/><label id="testtext2" for="test2">test</label>
-  <!-- <button onclick="test()">test</button> -->
+<div id="radioList1">
+  <input type="radio" name="test" id="test" style="width:0"/><label id="testtext" class="label1" for="test">test</label>
+  <input type="radio" name="test" id="test1" style="width:0"/><label id="testtext1" class="label1" for="test1">test</label>
+  <input type="radio" name="test" id="test2" style="width:0"/><label id="testtext2" class="label1" for="test2">test</label>
+  </div>
+  <div class="radioList2">
+  <input type="radio" name="test1" id="test4" style="width:0"/><label id="testtext" class="label2" for="test4">test</label>
+  <input type="radio" name="test1" id="test5" style="width:0"/><label id="testtext1" class="label2" for="test5">test</label>
+  <input type="radio" name="test1" id="test6" style="width:0"/><label id="testtext2" class="label2" for="test6">test</label>
+  </div>
+  <div class="radioList3">
+  <input type="radio" name="test2" id="test7" style="width:0"/><label id="testtext" class="label3" for="test7">test</label>
+  <input type="radio" name="test2" id="test8" style="width:0"/><label id="testtext1" class="label3" for="test8">test</label>
+  <input type="radio" name="test2" id="test9" style="width:0"/><label id="testtext2" class="label3" for="test9">test</label>
+  </div>
 </body>
 <script type="text/javascript">
-var label=document.getElementsByTagName('label');
-var radio=document.getElementsByTagName('input');
-for (var i = 0; i < label.length; i++) {
+function changeColor(class_name){
+ var label=document.getElementsByClassName(class_name);
+ for (var i = 0; i < label.length; i++) {
  (function(_i) {
   label[_i].onclick=function(){
    for (var j = 0; j < label.length; j++) {
-   label[j].style="color:#000";
+   label[j].style="color:#ccc";
    label[_i].style="color:red";
   }
  };
  })(i);
 }
+}
+changeColor('label1');
+changeColor('label2');
+changeColor('label3');
 </script>
 </html>

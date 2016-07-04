@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>artTemplate</title>
+    <script type="text/javascript" src="template.js"></script>
+</head>
+
+<body>
+    <div id="content"></div>
+    <script id="test" type="text/html">
+        <h1 id="title">{{title}}</h1>
+        <table>
+            <tr>
+                <th>test1</th>
+                <th>test2</th>
+                <th>test3</th>
+                <th>test4</th>
+                <th>test5</th>
+                <th>test6</th>
+                <th>test7</th>
+                <tr>
+                    {{each list as value i}}
+                    <td>{{value}}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    {{each list1 as value i}}
+                    <td>{{value}}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    {{each list2 as value i}}
+                    <td>{{value}}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    {{each list3 as value i}}
+                    <td>{{value}}</td>
+                    {{/each}}
+                </tr>
+            </tr>
+        </table>
+    </script>
+    <script type="text/javascript">
+    var data = {
+        title: '标签',
+        list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他'],
+        list1: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他'],
+        list2: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他'],
+        list3: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+    };
+    var html = template('test', data);
+    document.getElementById('content').innerHTML = html;
+    </script>
+</body>
+
+</html>
