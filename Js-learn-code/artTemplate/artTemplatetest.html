@@ -9,6 +9,10 @@
 
 <body>
     <div id="content"></div>
+    <div id="content2"></div>
+    <div id="content3"></div>
+    <div id="content4"></div>
+    <div id="content5"></div>
     <script id="test" type="text/html">
         <h1 id="title">{{title}}</h1>
         <table>
@@ -43,6 +47,16 @@
             </tr>
         </table>
     </script>
+    <script id="test2" type="text/html">
+        <h1>{{#content}}</h1>
+    </script>
+    <script type="text/html" id="test4">
+     <h1>{{title}}</h1>
+     {{include 'test'}}
+    </script>
+    <script type="text/html" id="test5">
+     {{#dateFormat(time)}}
+    </script>
     <script type="text/javascript">
     var data = {
         title: '标签',
@@ -51,8 +65,51 @@
         list2: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他'],
         list3: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
     };
+    var data2 = {
+        content: '<p style="color:red">不转义输出</p>'
+    }
+    var data3={
+      list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+    }
+    var source='<ul>'+'{{each list}}'+'<li>{{$value}}</li>{{/each}}'+'</ul>';
+
     var html = template('test', data);
+    var html2 = template('test2', data2);
+    var render=template.compile(source);
+    var html3=render(data3);
     document.getElementById('content').innerHTML = html;
+    document.getElementById('content2').innerHTML = html2;
+    document.getElementById('content3').innerHTML=html3;
+    document.getElementById('content4').innerHTML=html;
+
+
+     /**
+ * 对日期进行格式化，
+ * @param date 要格式化的日期
+ * @param format 进行格式化的模式字符串
+ *     支持的模式字母有：
+ *     y:年,
+ *     M:年中的月份(1-12),
+ *     d:月份中的天(1-31),
+ *     h:小时(0-23),
+ *     m:分(0-59),
+ *     s:秒(0-59),
+ *     S:毫秒(0-999),
+ *     q:季度(1-4)
+ * @return String
+ * @author yanis.wang
+ * @see http://yaniswang.com/frontend/2013/02/16/dateformat-performance/
+ */
+template.helper('dateFormat', function (date) {
+
+    date = 'the time is'+new Date(date);
+    return date;
+});
+var data5 = {
+ time: (new Date).toString(),
+};
+var html5=template('test5',data5);
+document.getElementById('content5').innerHTML=html5;
     </script>
 </body>
 
