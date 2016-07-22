@@ -20,3 +20,20 @@ HTML 5 不基于 SGML，因此不需要对 DTD 进行引用，但是需要声明
 （2）CSS 盒模型包括：margin（外边距），border（边框），padding（内边距），内容(content)。
 （3）IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width 属性不是内容的宽度，而是内容、内边距和边框的宽度的总和
 ```
+
+2. CSS 选择符有哪些？哪些属性可以继承？
+
+```
+1. 元素选择器（div, h1, p）
+2. id 选择器（#id）
+3. 类选择器（.class）
+4. 属性选择器（*[name="title"]）(子串匹配属性选择器:[abc^="def"])
+5. 相邻兄弟选择器（h1 + p）
+6. 子选择器（ul > li）
+7. 后代选择器（li a）
+8. 伪类选择器（a:hover, li:nth-child）
+9. 通配符选择器（ * ）
+
+可以继承的样式： font-family font-size color, UL LI DL DD DT;
+不可继承的样式： margin border padding  width height ;
+```
