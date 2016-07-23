@@ -27,13 +27,21 @@ HTML5 不基于 SGML，因此不需要对 DTD 进行引用，但是需要声明 
 常见空元素：<br> <hr> <img> <input> <link> <meta>
 鲜为人知的是：<area> <base> <col> <command> <embed> <keygen> <param> <source> <track> <wbr>
 ```
+
+- 页面导入样式时，使用 link 和 @import 有什么区别？
+
+```
+1. link 除了可以加载 CSS 外，还可以用来定义指向 RSS 的超连接，而@import是CSS提供的，只能用于加载CSS;
+2. 页面被加载的时候，link 会同时被加载，而 @import 引用的 CSS 会等到页面被加载完再加载;
+3. import 只在IE5以上才能被识别，而 link 是 XHTML 标签，无兼容问题。
+```
 ## <a name="css">CSS</a>
 - 标准的 CSS 盒子模型？与低版本的盒子模型有什么不同？
 
 ```
-（1）盒模型有两种：IE 盒子模型，W3C 盒子模型（标准盒子模型）。
-（2）CSS 盒模型包括：margin（外边距），border（边框），padding（内边距），内容(content)。
-（3）IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width  属性不是内容的宽度，而是内容、内边距和边框的宽度的总和
+1. 盒模型有两种：IE 盒子模型，W3C 盒子模型（标准盒子模型）。
+2. CSS 盒模型包括：margin（外边距），border（边框），padding（内边距），内容(content)。
+3. IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width  属性不是内容的宽度，而是内容、内边距和边框的宽度的总和
 ```
 
 - CSS 选择符有哪些？哪些属性可以继承？
@@ -53,6 +61,28 @@ HTML5 不基于 SGML，因此不需要对 DTD 进行引用，但是需要声明 
 不可继承的样式： margin border padding  width height;
 ```
 
+- CSS3 新增的伪类有哪些？
+
+```
+新的伪类：
+:target， :enabled 和 :disabled， 
+:checked， :indeterminate， :root， 
+:nth-child 和 :nth-last-child， 
+:nth-of-type 和 :nth-last-of-type，  
+:first-of-type 和 :last-of-type，
+:last-child :only-child 和 :only-of-type， 
+:empty， 和 :not。
+```
+
+- CSS 优先级算法
+
+```
+1. 优先级就是一个 应用于指定的CSS声明的 权重，它由 匹配的选择器中的 每一种选择器类型的 数值 决定。而当优先级与多个CSS声明中任意一个声明的优先级相等的时候，CSS中最后的那个声明将会被应用到元素上。当同一个元素有多个声明的时候，优先级才会有意义。因为每一个直接作用于元素的CSS规则总是会接管/覆盖（take over）该元素从祖先元素继承而来的规则。
+2. 优先级就近原则，同权重情况下样式定义最近者为准;载入样式以最后载入的定位为准;
+   优先级为: !important >  id > class > tag
+3. 注意：当在一个样式声明上使用 !important 规则时，该样式声明会覆盖CSS中任何其他的声明,。尽管技术上 !important 与优先级毫无关系，但是它们之间直接相互影响。
+   使用 !important 是一个坏习惯，应该尽量避免，因为这打断了样式表中的固有的级联规则，使得调试找bug变得更加困难了。当两条相互冲突的带有!important 规则的声明被应用到相同的元素上时，拥有更大优先级的声明将会被采用。
+```
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
 
