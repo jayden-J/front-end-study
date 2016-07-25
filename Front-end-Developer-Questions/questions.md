@@ -166,11 +166,22 @@ html 语义化就是让页面的内容结构化，便于对浏览器、搜索引
             bottom: 0;
             right: 0;
         ```
-    
+
 扩展阅读：
     1. [六种实现元素水平居中的方法](http://www.w3cplus.com/css/elements-horizontally-center-with-css.html)
     2. [Flex 布局教程：语法篇](www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
     3. [flex - CSS | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)
+
+- display 有哪些值？说明他们的作用。
+```
+block:此元素将显示为块级元素，此元素前后会带有换行符。
+inline: 默认。此元素会被显示为内联元素，元素前后没有换行符。
+inline-block:象行内元素一样显示，但其内容象块类型元素一样显示。
+none:此元素不会被显示。
+list-item:此元素会作为列表显示。
+table:此元素会作为块级表格来显示。
+flex:弹性布局（Flexible Box）
+```
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
 
@@ -225,3 +236,14 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
 如果一个值是引用类型的，那么它的存储空间将从堆中分配。由于引用值的大小会改变，所以不能把它放在栈中，否则会降低变量查寻的速度。相反，放在变量的栈空间中的值是该对象存储在堆中的地址。地址的大小是固定的，所以把它存储在栈中对变量性能无任何负面影响。
 ```
 ![内存图](./ct_js_value.gif)
+
+- JavaScript 如何实现继承？
+```
+1. 构造继承
+2. 原型继承
+3. 实例继承
+4. 拷贝继承
+
+原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
+```
+参考阅读：[ECMAScript 继承机制实现](http://w3school.com.cn/js/pro_js_inheritance_implementing.asp)
