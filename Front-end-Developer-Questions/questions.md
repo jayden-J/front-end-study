@@ -52,6 +52,28 @@ Trident：IE,360,搜狗浏览器等；
 Gecko：Firefox等；
 Presto内核：Opera7及以上。(Opera 内核原为：Presto，现为：Blink;)
 ```
+- HTML5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？
+```
+HTML5 新特性：
+1.HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
+2. 用于绘画的 canvas 元素
+3. 用于媒介回放的 video 和 audio 元素
+4. 对本地离线存储的更好的支持
+5. 新的特殊内容元素，比如 article、footer、header、nav、section
+6. 新的表单控件，比如 calendar、date、time、email、url、search
+
+移除的元素：
+纯表现的元素：basefont，big，center，font, s，strike，tt，u;
+对可用性产生负面影响的元素：frame，frameset，noframes；
+
+支持HTML5新标签：
+IE8/IE7/IE6支持通过 document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式（当然最好的方式是直接使用成熟的框架、使用最多的是 html5shiv 框架）：
+<!--[if lt IE 9]> 
+<script> src="http://html5shiv.googlecode.com/svn/trunk/html5.js"</script> 
+<![endif]--> 
+
+如何区分HTML5： DOCTYPE声明\新增的结构元素\功能元素
+```
 ## <a name="css">CSS</a>
 - 标准的 CSS 盒子模型？与低版本的盒子模型有什么不同？
 
