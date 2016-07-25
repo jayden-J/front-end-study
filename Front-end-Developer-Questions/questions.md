@@ -72,7 +72,15 @@ IE8/IE7/IE6支持通过 document.createElement 方法产生的标签，可以利
 <script> src="http://html5shiv.googlecode.com/svn/trunk/html5.js"</script> 
 <![endif]--> 
 
-如何区分HTML5： DOCTYPE声明\新增的结构元素\功能元素
+如何区分 HTML5： DOCTYPE 声明\新增的结构元素\功能元素
+```
+- 简述一下你对HTML语义化的理解？
+```
+语义化的含义就是用正确的标签做正确的事情，
+html 语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；
+在没有样式 CCS 情况下也以一种文档格式显示，并且是容易阅读的。
+搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。
+使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。
 ```
 ## <a name="css">CSS</a>
 - 标准的 CSS 盒子模型？与低版本的盒子模型有什么不同？
@@ -116,12 +124,53 @@ IE8/IE7/IE6支持通过 document.createElement 方法产生的标签，可以利
 - CSS 优先级算法
 
 ```
-1. 优先级就是一个 应用于指定的CSS声明的 权重，它由 匹配的选择器中的 每一种选择器类型的 数值 决定。而当优先级与多个CSS声明中任意一个声明的优先级相等的时候，CSS中最后的那个声明将会被应用到元素上。当同一个元素有多个声明的时候，优先级才会有意义。因为每一个直接作用于元素的CSS规则总是会接管/覆盖（take over）该元素从祖先元素继承而来的规则。
+1. 优先级就是一个 应用于指定的 CSS 声明的权重，它由 匹配的选择器中的每一种选择器类型的 数值 决定。而当优先级与多个 CSS 声明中任意一个声明的优先级相等的时候，CSS 中最后的那个声明将会被应用到元素上。当同一个元素有多个声明的时候，优先级才会有意义。因为每一个直接作用于元素的 CSS 规则总是会接管/覆盖（take over）该元素从祖先元素继承而来的规则。
 2. 优先级就近原则，同权重情况下样式定义最近者为准;载入样式以最后载入的定位为准;
    优先级为: !important >  id > class > tag
-3. 注意：当在一个样式声明上使用 !important 规则时，该样式声明会覆盖CSS中任何其他的声明,。尽管技术上 !important 与优先级毫无关系，但是它们之间直接相互影响。
-   使用 !important 是一个坏习惯，应该尽量避免，因为这打断了样式表中的固有的级联规则，使得调试找bug变得更加困难了。当两条相互冲突的带有!important 规则的声明被应用到相同的元素上时，拥有更大优先级的声明将会被采用。
+3. 注意：当在一个样式声明上使用 !important 规则时，该样式声明会覆盖 CSS 中任何其他的声明,。尽管技术上 !important 与优先级毫无关系，但是它们之间直接相互影响。
+   使用 !important 是一个坏习惯，应该尽量避免，因为这打断了样式表中的固有的级联规则，使得调试找 bug 变得更加困难了。当两条相互冲突的带有!important 规则的声明被应用到相同的元素上时，拥有更大优先级的声明将会被采用。
 ```
+- 如何居中 div？如何居中一个浮动元素？如何让绝对定位的 div 居中？
+    + 居中 div:给 div 设置一个宽度，然后设置 margin:0,auto
+
+        ```
+            div {
+                width:200px;
+                margin:0 auto;
+                }
+        ```
+    
+    + 居中浮动元素
+
+        ```
+        .div{
+            width:500px;/*规定宽度为500px,高度可选*/
+            height:300px;
+            color:#fff;
+            background:#000;
+            margin-left:50%;/* 让元素左边界位于中间*/
+            position:relative;/* 设置相对定位*/
+            left:-250px;/* 设置-left/2  也就是500px/2使元素居中 */
+                }
+        ```
+    
+    + 绝对定位的 div 居中
+
+        ```
+            position: absolute;
+            width: 1200px;
+            background: none;
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        ```
+    
+扩展阅读：
+    1. [六种实现元素水平居中的方法](http://www.w3cplus.com/css/elements-horizontally-center-with-css.html)
+    2. [Flex 布局教程：语法篇](www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+    3. [flex - CSS | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
 
