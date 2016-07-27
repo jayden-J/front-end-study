@@ -247,3 +247,110 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
 原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
 ```
 参考阅读：[ECMAScript 继承机制实现](http://w3school.com.cn/js/pro_js_inheritance_implementing.asp)
+
+- Javascript创建对象的几种方式？
+    + 原始方式 `var object1=new Object`
+
+    + 工厂方式
+
+        ```
+function createObject() {
+  var thisObject = new Object;
+  thisObject.color = "blue";
+
+  return thisObject;
+}
+
+var object1 = createObject();
+        ```
+
+    + 构造函数方式
+        ```
+function Car(sColor,iDoors,iMpg) {
+  this.color = sColor;
+  this.doors = iDoors;
+  this.mpg = iMpg;
+  this.showColor = function() {
+    alert(this.color);
+  };
+}
+
+var oCar1 = new Car("red",4,23);
+        ```
+        在书写上构造函数跟其他函数是没有什么区别的，主要的区别还是在使用上，构造函数需要使用 new 操作符。
+        这样的构造函数有一个缺陷，就是每个方法都会在每个实例上创建一次，因为每次创建都需要分配内存空间，但是有时候这样的特性还是有用的，主要是要控制它们，在不使用的时候释放内存。
+
+    + 原型方式
+
+        ```
+function Car() {
+}
+
+Car.prototype.color = "blue";
+Car.prototype.doors = 4;
+Car.prototype.mpg = 25;
+Car.prototype.showColor = function() {
+  alert(this.color);
+};
+
+var oCar1 = new Car();
+        ```
+        原型的所有属性都被立即赋予要创建的对象，意味着所有 Car 实例存放的都是指向 showColor() 函数的指针。从语义上讲，所有属性看起来都属于一个对象，因此解决了前面两种方式存在的问题。但是如果需要保持原对象属性值是每一个对象特有的，而不是共享的，那就要联合使用构造函数和原型方式。
+    + 混合的构造函数/原型方式
+
+        ```
+var Computer = function(name){    
+    this.name = name;
+}
+Computer.prototype.showMessage = function(){
+    alert(this.name);
+}
+var apple = new Computer('apple');
+apple.showMessage();
+        ```
+    + 动态原型方法
+
+        ```
+function Car(sColor,iDoors,iMpg) {
+  this.color = sColor;
+  this.doors = iDoors;
+  this.mpg = iMpg;
+  this.drivers = new Array("Mike","John");
+  
+  if (typeof Car._initialized == "undefined") {
+    Car.prototype.showColor = function() {
+      alert(this.color);
+    };
+    
+    Car._initialized = true;
+  }
+}
+        ```
+    + 混合工厂方式(这种方式通常是在不能应用前一种方式时的变通方法。它的目的是创建假构造函数，只返回另一种对象的新实例。)
+
+    ```
+function Car() {
+  var oTempCar = new Object;
+  oTempCar.color = "blue";
+  oTempCar.doors = 4;
+  oTempCar.mpg = 25;
+  oTempCar.showColor = function() {
+    alert(this.color);
+  };
+
+  return oTempCar;
+}
+var car = new Car();
+
+注意：由于在 Car() 构造函数内部调用了 new 运算符，所以将忽略第二个 new 运算符（位于构造函数之外），在构造函数内部创建的对象被传递回变量 car。
+这种方式在对象方法的内部管理方面与经典方式有着相同的问题。强烈建议：除非万不得已，还是避免使用这种方式。
+    ```
+    + 寄生构造函数模式
+
+        ```
+var test = function(name){    
+    return {'name':name}
+}
+var g = new test('apple');
+        ```
+参考阅读：[前端开发基础－JavaScript（二）-面向对象部分](http://mp.weixin.qq.com/s?__biz=MzI3MDE0MzAzMw==&mid=2652201871&idx=1&sn=c3b440a87c212015371f365c1d2b6e01&scene=4#wechat_redirect)

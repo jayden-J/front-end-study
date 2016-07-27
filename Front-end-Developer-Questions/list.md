@@ -162,7 +162,7 @@ HTML5？~~
 
 -  ~~Javascript如何实现继承？~~
 
--  Javascript创建对象的几种方式？
+-  ~~Javascript创建对象的几种方式？~~
 
 -  Javascript作用链域?
 
