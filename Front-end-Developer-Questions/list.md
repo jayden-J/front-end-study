@@ -68,9 +68,9 @@ HTML5？~~
 
 - ~~display有哪些值？说明他们的作用。~~
 
-- position的值relative和absolute定位原点是？
+- ~~position的值relative和absolute定位原点是？~~
 
-- CSS3有哪些新特性？
+- ~~CSS3有哪些新特性？~~
 
 - 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
 

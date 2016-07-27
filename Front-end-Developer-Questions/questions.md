@@ -223,6 +223,34 @@ list-item:此元素会作为列表显示。
 table:此元素会作为块级表格来显示。
 flex:弹性布局（Flexible Box）
 ```
+
+- position 的值 relative 和 absolute 定位原点是？
+
+```
+absolute：生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。
+fixed （老IE不支持）：生成绝对定位的元素，相对于浏览器窗口进行定位。
+relative：生成相对定位的元素，相对于其正常位置进行定位。
+inherit：规定从父元素继承 position 属性的值。
+```
+
+- CSS3 有哪些新特性？
+```
+1. 新增各种CSS选择器
+2. 圆角:border-radius
+3. 多列布局：multi-column layout
+4. 阴影和反射：Shadow\Reflect
+5. 文字特效、文字渲染
+6. 线性渐变：gradient
+7. 旋转：transform
+8. 增加了旋转,缩放,定位,倾斜,动画，多背景
+```
+
+参考阅读：
+1. [CSS3 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3)
+2. [使用CSS的多列布局](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_multi-column_layouts)
+3. [CSS3 参考手册 box-reflect](http://www.css88.com/book/css/properties/only-webkit/box-reflect.htm)
+
+
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
 
