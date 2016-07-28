@@ -251,6 +251,7 @@ document.write(sessionStorage.lastname);
     3. [flex - CSS | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)
 
 - display 有哪些值？说明他们的作用。
+
 ```
 block:此元素将显示为块级元素，此元素前后会带有换行符。
 inline: 默认。此元素会被显示为内联元素，元素前后没有换行符。
@@ -271,6 +272,7 @@ inherit：规定从父元素继承 position 属性的值。
 ```
 
 - CSS3 有哪些新特性？
+
 ```
 1. 新增各种CSS选择器
 2. 圆角:border-radius
@@ -281,12 +283,38 @@ inherit：规定从父元素继承 position 属性的值。
 7. 旋转：transform
 8. 增加了旋转,缩放,定位,倾斜,动画，多背景
 ```
-
 参考阅读：
 1. [CSS3 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3)
 2. [使用CSS的多列布局](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_multi-column_layouts)
 3. [CSS3 参考手册 box-reflect](http://www.css88.com/book/css/properties/only-webkit/box-reflect.htm)
 
+- 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
+
+```
+flexbox 布局模式被用来重新定义 CSS 中的布局方式。
+CSS3 弹性框(Flexible Box 或 Flexbox)，是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当排布行为的布局方式。对很多应用程序来说，由于不使用浮动，且弹性容器的外边距也不会与其内容的外边距合并，弹性框模型比起方框模型要好一些。
+
+应用场景：网格布局，圣杯布局，输入框的布局，固定的底栏
+```
+参考阅读：
+1. [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+2. [Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+3. [使用 CSS 弹性框 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
+4. [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+- 用纯 CSS 创建一个三角形的原理是什么？
+
+```
+把其中三条边框隐藏掉，注：IE6下把边框设置成 transparent 时会出现黑影，并不会透明，把 border-style 设置成 dashed 可以解决。
+
+.triangle{
+    width:0;
+    height:0;
+    border-width:20px;
+    border-style:solid dashed dashed dashed;
+    border-color:#e66161 transparent transparent transparent;
+}
+```
 
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
