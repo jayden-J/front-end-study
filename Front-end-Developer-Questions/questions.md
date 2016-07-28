@@ -70,9 +70,9 @@ HTML5 新特性：
 
 支持HTML5新标签：
 IE8/IE7/IE6支持通过 document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式（当然最好的方式是直接使用成熟的框架、使用最多的是 html5shiv 框架）：
-<!--[if lt IE 9]> 
-<script> src="http://html5shiv.googlecode.com/svn/trunk/html5.js"</script> 
-<![endif]--> 
+<!--[if lt IE 9]>
+<script> src="http://html5shiv.googlecode.com/svn/trunk/html5.js"</script>
+<![endif]-->
 
 如何区分 HTML5： DOCTYPE 声明\新增的结构元素\功能元素
 ```
@@ -123,6 +123,43 @@ HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并
 2. 离线的情况下，浏览器就直接使用离线存储的资源。
 ```
 
+- 请描述一下 cookies，sessionStorage 和 localStorage 的区别？
+
+```
+cookie:网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。cookie 数据始终在同源的 http 请求中携带（即使不需要），记会在浏览器和服务器间来回传递。
+sessionStorage 和 localStorage 不会自动把数据发给服务器，仅在本地保存。
+
+存储：
+cookie 数据大小不能超过 4k。
+sessionStorage 和 localStorage 虽然也有存储大小的限制，但是比 cookie 大得多。
+
+有效期时间：
+localStorage - 没有时间限制的数据存储
+sessionStorage - 针对一个 session 的数据存储
+cookie - 在设置的 cookie 过期时间之前一直有效，即使窗口或浏览器关闭
+
+localStorage 使用方法：
+<script type="text/javascript">
+localStorage.lastname="Smith";
+document.write(localStorage.lastname);
+</script>
+
+sessionStorage 使用方法：
+<script type="text/javascript">
+sessionStorage.lastname="Smith";
+document.write(sessionStorage.lastname);
+</script>
+```
+
+- iframe有那些缺点？
+
+```
+1. iframe 会阻塞主页面的 Onload 事件；
+2. 搜索引擎的检索程序无法解读这种页面，不利于 SEO;
+3. iframe 和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。
+4. 如果需要使用 iframe，最好是通过 javascript 动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题。
+```
+
 ## <a name="css">CSS</a>
 - 标准的 CSS 盒子模型？与低版本的盒子模型有什么不同？
 
@@ -153,12 +190,12 @@ HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并
 
 ```
 新的伪类：
-:target， :enabled 和 :disabled， 
-:checked， :indeterminate， :root， 
-:nth-child 和 :nth-last-child， 
-:nth-of-type 和 :nth-last-of-type，  
+:target， :enabled 和 :disabled，
+:checked， :indeterminate， :root，
+:nth-child 和 :nth-last-child，
+:nth-of-type 和 :nth-last-of-type，
 :first-of-type 和 :last-of-type，
-:last-child :only-child 和 :only-of-type， 
+:last-child :only-child 和 :only-of-type，
 :empty， 和 :not。
 ```
 
@@ -180,7 +217,7 @@ HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并
                 margin:0 auto;
                 }
         ```
-    
+
     + 居中浮动元素
 
         ```
@@ -194,7 +231,7 @@ HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并
             left:-250px;/* 设置-left/2  也就是500px/2使元素居中 */
                 }
         ```
-    
+
     + 绝对定位的 div 居中
 
         ```
@@ -295,7 +332,7 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
 ```
 - JavaScript 有几种类型的值？（堆：原始数据类型和 栈：引用数据类型），你能画一下他们的内存图吗？
 ```
-栈：原始数据类型（Undefined，Null，Boolean，Number、String） 
+栈：原始数据类型（Undefined，Null，Boolean，Number、String）
 堆：引用数据类型（对象、数组和函数）
 
 在 ECMAScript 中，变量可以存在两种类型的值，即原始值和引用值。
@@ -326,10 +363,10 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
             function createObject() {
               var thisObject = new Object;
               thisObject.color = "blue";
-            
+
               return thisObject;
             }
-            
+
             var object1 = createObject();
         ```
 
@@ -344,7 +381,7 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
                 alert(this.color);
               };
             }
-            
+
             var oCar1 = new Car("red",4,23);
         ```
 
@@ -356,22 +393,22 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
         ```
             function Car() {
             }
-            
+
             Car.prototype.color = "blue";
             Car.prototype.doors = 4;
             Car.prototype.mpg = 25;
             Car.prototype.showColor = function() {
                 alert(this.color);
             };
-            
+
             var oCar1 = new Car();
         ```
-        
+
         原型的所有属性都被立即赋予要创建的对象，意味着所有 Car 实例存放的都是指向 showColor() 函数的指针。从语义上讲，所有属性看起来都属于一个对象，因此解决了前面两种方式存在的问题。但是如果需要保持原对象属性值是每一个对象特有的，而不是共享的，那就要联合使用构造函数和原型方式。
     + 混合的构造函数/原型方式
 
         ```
-            var Computer = function(name){    
+            var Computer = function(name){
                 this.name = name;
             }
             Computer.prototype.showMessage = function(){
@@ -380,7 +417,7 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
             var apple = new Computer('apple');
             apple.showMessage();
         ```
-    
+
     + 动态原型方法
 
         ```
@@ -389,17 +426,17 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
               this.doors = iDoors;
               this.mpg = iMpg;
               this.drivers = new Array("Mike","John");
-              
+
               if (typeof Car._initialized == "undefined") {
                 Car.prototype.showColor = function() {
                   alert(this.color);
                 };
-                
+
                 Car._initialized = true;
               }
             }
         ```
-   
+
     + 混合工厂方式(这种方式通常是在不能应用前一种方式时的变通方法。它的目的是创建假构造函数，只返回另一种对象的新实例。)
 
         ```
@@ -411,22 +448,40 @@ JavaScript 对象是通过引用来传递的，我们创建的每个新对象实
           oTempCar.showColor = function() {
             alert(this.color);
           };
-        
+
           return oTempCar;
         }
         var car = new Car();
-        
+
         注意：由于在 Car() 构造函数内部调用了 new 运算符，所以将忽略第二个 new 运算符（位于构造函数之外），在构造函数内部创建的对象被传递回变量 car。
         这种方式在对象方法的内部管理方面与经典方式有着相同的问题。强烈建议：除非万不得已，还是避免使用这种方式。
         ```
-    
+
     + 寄生构造函数模式
 
         ```
-            var test = function(name){    
+            var test = function(name){
                 return {'name':name}
             }
             var g = new test('apple');
         ```
 
 参考阅读：[前端开发基础－JavaScript（二）-面向对象部分](http://mp.weixin.qq.com/s?__biz=MzI3MDE0MzAzMw==&mid=2652201871&idx=1&sn=c3b440a87c212015371f365c1d2b6e01&scene=4#wechat_redirect)
+
+- Javascript作用链域?
+- 
+```
+全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节。
+当需要从局部函数查找某一属性或方法时，如果当前作用域没有找到，就会上溯到上层作用域查找，直至全局函数，这种组织形式就是作用域链。
+```
+
+- 谈谈 This 对象的理解
+- 
+```
+this 总是指向函数的直接调用者（而非间接调用者）；
+如果有 new 关键字，this 指向 new 出来的那个对象；
+在事件中，this 指向触发这个事件的对象，特殊的是，IE 中的 attachEvent 中的 this 总是指向全局对象 Window；
+
+```
+
+详细可以阅读：[JavaScript 之 this 详解](http://gold.xitu.io/entry/576b81ae7db2a20054dad214)
