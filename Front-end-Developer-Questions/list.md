@@ -39,9 +39,9 @@ HTML5？~~
 
 - ~~HTML5的form如何关闭自动完成功能？~~
 
-- 如何实现浏览器内多个标签页之间的通信? (阿里)
+- ~~如何实现浏览器内多个标签页之间的通信? (阿里)~~
 
-- webSocket如何兼容低浏览器？(阿里)
+- ~~webSocket如何兼容低浏览器？(阿里)~~
 
 - 页面可见性（Page Visibility API） 可以有哪些用途？
 
@@ -82,11 +82,11 @@ HTML5？~~
 
 - ~~li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？~~
 
-- 为什么要初始化CSS样式?
+- ~~为什么要初始化CSS样式?~~
 
-- absolute的containing block计算方式跟正常流有什么不同？
+- ~~absolute的containing block计算方式跟正常流有什么不同？~~
 
-- CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？
+- ~~CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？~~
 
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
@@ -170,9 +170,9 @@ HTML5？~~
 
 -  ~~eval是做什么的？~~
 
--  什么是 window 对象? 什么是 document 对象?
+-  ~~什么是 window 对象? 什么是 document 对象?~~
 
--  null，undefined的区别？
+-  ~~null，undefined的区别？~~
 
 -  写一个通用的事件侦听器函数(机试题)。
 

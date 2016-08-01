@@ -171,6 +171,25 @@ label 标签来定义表单控制间的关系,当用户选择该标签时，浏�
 autocomplete=off
 ```
 
+- 如何实现浏览器内多个标签页之间的通信?
+```
+WebSocket、SharedWorker(这个不是很懂，可以查看 w3c 的文档[https://www.w3.org/TR/2015/WD-workers-20150924/])
+也可以调用 localstorge、cookies 等本地存储方式；
+
+localstorge 另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，
+我们通过监听事件，控制它的值来进行页面信息通信；
+注意 quirks：Safari 在无痕模式下设置 localstorge 值时会抛出 QuotaExceededError。 的异常；
+```
+参考阅读：[WebSockets 简介：将套接字引入网络](http://www.html5rocks.com/zh/tutorials/websockets/basics/)
+
+- webSocket如何兼容低浏览器？(阿里)
+```
+长轮询:对服务器发起的链接创建假象。利用长轮询，客户端可打开指向服务器的 HTTP 连接，而服务器会一直保持连接打开，直到发送响应。
+
+其他包括 Flash、XHR multipart 请求和所谓的 htmlfiles
+```
+
+- 
 ## <a name="css">CSS</a>
 - 标准的 CSS 盒子模型？与低版本的盒子模型有什么不同？
 
@@ -338,7 +357,38 @@ CSS3 弹性框(Flexible Box 或 Flexbox)，是一种当页面需要适应不同�
 行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为 0，就没有空格了。
 ```
 
+- 为什么要 CSS Reset?
+```
+1. 浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
+
+最简单的初始化方法： * {padding: 0; margin: 0;} （强烈不建议）
+```
  
+- absolute 的 containing block 计算方式跟正常流有什么不同？
+
+```
+1. static(默认的)/relative：简单说就是它的父元素的内容框（即去掉padding的部分）
+2. absolute: 向上找最近的定位为absolute/relative的元素
+3. fixed: 它的 containing block 一律为根元素(html/body)，根元素也是 initial containing block
+
+无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
+1、若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形；
+2、否则,则由这个祖先元素的 padding box 构成。
+如果都找不到，则为 initial containing block。
+```
+
+- CSS 里的 visibility 属性有个 collapse 属性值是干嘛用的？在不同浏览器下以后什么区别？
+
+```
+visibility:collapse 当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 "hidden"。
+
+注意：有些现代浏览器对 visibility: collapse 不支持或是不完全支持。很多时候用在不是表格行与列的元素上时不会正确的将它显示成 visibility: hidden 的效果。
+
+visibility:collapse 会改变表格的布局，嵌套在其被折叠的单元格中的表格也会同样被折叠，除非专门为此嵌套表格指定 visibility: visible 。
+
+
+```
+
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
 
@@ -543,3 +593,26 @@ this 总是指向函数的直接调用者（而非间接调用者）；
 eval 可以把对应的字符串解析成JS代码并运行；
 应该避免使用 eval，不安全，非常耗性能（2 次，一次解析成 js 语句，一次执行）。
 ```
+
+- 什么是 window 对象? 什么是 document 对象?
+```
+window：浏览器对象，它表示浏览器窗口。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。甚至 HTML DOM 的 document 也是 window 对象的属性之一。
+document:文档对象
+```
+
+- null，undefined的区别？
+```
+null        表示一个对象被定义了，值为“空值”；
+undefined   表示不存在这个值。
+
+typeof undefined //"undefined"
+    undefined :是一个表示"无"的原始值或者说表示"缺少值"，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined； 
+    例如变量被声明了，但没有赋值时，就等于undefined
+
+typeof null //"object"
+    null : 是一个对象(空对象, 没有任何属性和方法)；
+
+```
+参考阅读：
+1. [undefined 与 null 的区别](https://leohxj.gitbooks.io/front-end-database/content/javascript-basic/difference-between-undefined-and-null.html)
+2. [探索 JavaScript 中 Null 和 Undefined 的深渊](http://yanhaijing.com/javascript/2014/01/05/exploring-the-abyss-of-null-and-undefined-in-javascript/)
