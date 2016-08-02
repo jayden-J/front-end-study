@@ -45,13 +45,13 @@ HTML5？~~
 
 - 页面可见性（Page Visibility API） 可以有哪些用途？
 
-- 如何在页面上实现一个圆形的可点击区域？
+- ~~如何在页面上实现一个圆形的可点击区域？~~
 
-- 实现不使用 border 画出1px高的线，在不同浏览器的Quirksmode和CSSCompat模式下都能保持同一效果。
+- ~~实现不使用 border 画出1px高的线，在不同浏览器的Quirksmode和CSSCompat模式下都能保持同一效果。~~
 
-- 网页验证码是干嘛的，是为了解决什么安全问题？
+- ~~网页验证码是干嘛的，是为了解决什么安全问题？~~
 
-- title与h1的区别、b与strong的区别、i与em的区别？
+- ~~title与h1的区别、b与strong的区别、i与em的区别？~~
 
 
 ## <a name='css'>CSS</a>
