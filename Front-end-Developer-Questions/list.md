@@ -43,7 +43,7 @@ HTML5？~~
 
 - ~~webSocket如何兼容低浏览器？(阿里)~~
 
-- 页面可见性（Page Visibility API） 可以有哪些用途？
+- ~~页面可见性（Page Visibility API） 可以有哪些用途？~~
 
 - ~~如何在页面上实现一个圆形的可点击区域？~~
 
@@ -90,9 +90,9 @@ HTML5？~~
 
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
-- 对BFC规范(块级格式化上下文：block formatting context)的理解？
+- ~~对BFC规范(块级格式化上下文：block formatting context)的理解？~~
 
-- CSS权重优先级是如何计算的？
+- ~~CSS权重优先级是如何计算的？~~
 
 - 请解释一下为什么会出现浮动和什么时候需要清除浮动？清除浮动的方式
 
@@ -182,11 +182,11 @@ HTML5？~~
 
 -  什么是闭包（closure），为什么要用它？
 
--  javascript 代码中的"use strict";是什么意思 ? 使用它区别是什么？
+-  ~~javascript 代码中的"use strict";是什么意思 ? 使用它区别是什么？~~
 
 -  如何判断一个对象是否属于某个类？
 
--  new操作符具体干了什么呢?
+-  ~~new操作符具体干了什么呢?~~
 
 -  用原生JavaScript的实现过什么功能吗？
 

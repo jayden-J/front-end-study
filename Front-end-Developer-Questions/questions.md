@@ -215,6 +215,13 @@ localstorge 另一个浏览上下文里被添加、修改或删除时，它都�
 3. i 内容展示为斜体，em 表示强调的文本；
 ```
 
+- 页面可见性（Page Visibility API） 可以有哪些用途？
+```
+通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;
+在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
+```
+参考阅读：腾讯 AlloyTeam 的文章：[HTML5迟来的API：Page Visibility](http://www.alloyteam.com/2012/11/page-visibility-api/)
+
 ## <a name="css">CSS</a>
 - 标准的 CSS 盒子模型？与低版本的盒子模型有什么不同？
 
@@ -393,7 +400,7 @@ CSS3 弹性框(Flexible Box 或 Flexbox)，是一种当页面需要适应不同�
 
 ```
 1. static(默认的)/relative：简单说就是它的父元素的内容框（即去掉padding的部分）
-2. absolute: 向上找最近的定位为absolute/relative的元素
+2. absolute: 向上找最近的定位为 absolute/relative 的元素
 3. fixed: 它的 containing block 一律为根元素(html/body)，根元素也是 initial containing block
 
 无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
@@ -440,7 +447,7 @@ div{
 如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现。
 ```
 
-
+- position 跟 display、margin collapse、overflow、float 这些特性相互叠加后会怎么样？
 
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
@@ -669,3 +676,21 @@ typeof null //"object"
 参考阅读：
 1. [undefined 与 null 的区别](https://leohxj.gitbooks.io/front-end-database/content/javascript-basic/difference-between-undefined-and-null.html)
 2. [探索 JavaScript 中 Null 和 Undefined 的深渊](http://yanhaijing.com/javascript/2014/01/05/exploring-the-abyss-of-null-and-undefined-in-javascript/)
+
+- javascript 代码中的"use strict";是什么意思 ? 使用它区别是什么？
+```
+use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行。
+
+严格模式下，ECMAScript3 的一些不确定的行为将会得到处理，而且对某些不安全的操作也会抛出错误。启用严格模式可以在顶部添加代码：'use strict';。同样可以在函数内部的上方注明，指定函数在严格模式下执行。
+
+默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值;
+全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用；
+消除代码运行的一些不安全之处，保证代码运行的安全,限制函数中的arguments修改，严格模式下的eval函数的行为和非严格模式的也不相同;
+```
+
+- new 操作符具体干了什么呢?
+```
+     1. 创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
+     2. 属性和方法被加入到 this 引用的对象中。
+     3. 新创建的对象由 this 所引用，并且最后隐式的返回 this 。
+```

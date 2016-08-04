@@ -1,0 +1,1685 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>questions</title></head><body><article class="markdown-body"><h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><a name='list'>目录</a></h2>
+<ol>
+<li><a href="#html">HTML部分</a></li>
+<li><a href="#css">CSS部分</a></li>
+<li><a href="#js">JavaScript部分</a></li>
+</ol>
+<h2 id="html"><a name="user-content-html" href="#html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><a name="html">HTML</a></h2>
+<ul>
+<li>Doctype 的作用？严格模式与混杂模式如何区分？它们有何意义？</li>
+</ul>
+<pre><code>1. &lt;!DOCTYPE&gt; 不是 HTML 标签，它位于 HTML 文档的第一行，用来告知浏览器的解析器用什么文档标准来解析这个文档，DOCTYPE 缺少或错误会导致文档以兼容模式显示。注意：DOCTYPE 没有结束标签，声明对大小写不敏感。
+2. 标准模式的排版和 JS 模式是按照当前浏览器支持的最高标准运行的，在兼容模式中，页面会以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防站点无法正常工作。
+</code></pre>
+
+<ul>
+<li>HTML5 为什么只需要写 &lt;!DOCTYPE&gt;</li>
+</ul>
+<pre><code>HTML5 不基于 SGML，因此不需要对 DTD 进行引用，但是需要声明 doctype 来规范浏览器的行为。
+</code></pre>
+
+<ul>
+<li>行内元素有哪些？块级元素有哪些？空（void）元素有哪些？</li>
+</ul>
+<pre><code>行内元素：a b span img input select strong
+块级元素：div p ul ol li dl dt dd h1 h2 h3 h4…
+常见空元素：&lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt;
+鲜为人知的是：&lt;area&gt; &lt;base&gt; &lt;col&gt; &lt;command&gt; &lt;embed&gt; &lt;keygen&gt; &lt;param&gt; &lt;source&gt; &lt;track&gt; &lt;wbr&gt;
+</code></pre>
+
+<ul>
+<li>页面导入样式时，使用 link 和 @import 有什么区别？</li>
+</ul>
+<pre><code>1. link 除了可以加载 CSS 外，还可以用来定义指向 RSS 的超连接，而@import是CSS提供的，只能用于加载CSS;
+2. 页面被加载的时候，link 会同时被加载，而 @import 引用的 CSS 会等到页面被加载完再加载;
+3. import 只在IE5以上才能被识别，而 link 是 XHTML 标签，无兼容问题。
+</code></pre>
+
+<ul>
+<li>说说你对浏览器内核的理解</li>
+</ul>
+<pre><code>浏览器内核包括渲染引擎和 JS 引擎。
+渲染引擎负责取得网页的内容（HTML,图像等），以及 整理讯息（加入 CSS ），以及计算网页的显示方式，然后输出到显示器或者打印机。浏览器的内核不同对网页的语法解释有所不同，所以渲染的效果也不一样。
+JS 引擎解析和执行 JavaScript 来实现网页的动态效果。
+</code></pre>
+
+<ul>
+<li>常见的浏览器内核有哪些？</li>
+</ul>
+<pre><code>Webkit：chrome，Safari 等,(chrome:Blink,Webkit 的分支)；
+Trident：IE,360,搜狗浏览器等；
+Gecko：Firefox等；
+Presto内核：Opera7及以上。(Opera 内核原为：Presto，现为：Blink;)
+</code></pre>
+
+<ul>
+<li>HTML5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</li>
+</ul>
+<pre><code>HTML5 新特性：
+1.HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
+2. 用于绘画的 canvas 元素
+3. 用于媒介回放的 video 和 audio 元素
+4. 对本地离线存储的更好的支持
+5. 新的特殊内容元素，比如 article、footer、header、nav、section
+6. 新的表单控件，比如 calendar、date、time、email、url、search
+
+移除的元素：
+纯表现的元素：basefont，big，center，font, s，strike，tt，u;
+对可用性产生负面影响的元素：frame，frameset，noframes；
+
+支持HTML5新标签：
+IE8/IE7/IE6支持通过 document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式（当然最好的方式是直接使用成熟的框架、使用最多的是 html5shiv 框架）：
+&lt;!--[if lt IE 9]&gt;
+&lt;script&gt; src=&quot;http://html5shiv.googlecode.com/svn/trunk/html5.js&quot;&lt;/script&gt;
+&lt;![endif]--&gt;
+
+如何区分 HTML5： DOCTYPE 声明\新增的结构元素\功能元素
+</code></pre>
+
+<ul>
+<li>简述一下你对HTML语义化的理解？</li>
+</ul>
+<pre><code>语义化的含义就是用正确的标签做正确的事情，
+html 语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；
+在没有样式 CCS 情况下也以一种文档格式显示，并且是容易阅读的。
+搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。
+使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。
+</code></pre>
+
+<ul>
+<li>HTML5 的离线储存怎么使用，工作原理能不能解释一下？</li>
+</ul>
+<p><pre><code>HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。
+
+原理：HTML5的离线存储是基于一个新建的.appcache 文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像 cookie 一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。
+
+
+应用程序缓存为应用带来三个优势：
+离线浏览 - 用户可在应用离线时使用它们
+速度 - 已缓存资源加载得更快
+减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。
+
+如何使用：
+1、页面头部像下面一样加入一个manifest的属性；
+2、在cache.manifest文件的编写离线存储的资源；
+    CACHE MANIFEST
+    #v0.11
+    CACHE:
+    js/app.js
+    css/style.css
+    NETWORK:
+    resourse/logo.png
+    FALLBACK:
+    / /offline.html
+3、在离线状态时，操作window.applicationCache进行需求实现。
+</code></pre><br />
+参考阅读：<a href="http://w3school.com.cn/html5/html_5_app_cache.asp">HTML5 应用程序缓存</a></p>
+<ul>
+<li>浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢？</li>
+</ul>
+<pre><code>1. 在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。
+2. 离线的情况下，浏览器就直接使用离线存储的资源。
+</code></pre>
+
+<ul>
+<li>请描述一下 cookies，sessionStorage 和 localStorage 的区别？</li>
+</ul>
+<pre><code>cookie:网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。cookie 数据始终在同源的 http 请求中携带（即使不需要），记会在浏览器和服务器间来回传递。
+sessionStorage 和 localStorage 不会自动把数据发给服务器，仅在本地保存。
+
+存储：
+cookie 数据大小不能超过 4k。
+sessionStorage 和 localStorage 虽然也有存储大小的限制，但是比 cookie 大得多。
+
+有效期时间：
+localStorage - 没有时间限制的数据存储
+sessionStorage - 针对一个 session 的数据存储
+cookie - 在设置的 cookie 过期时间之前一直有效，即使窗口或浏览器关闭
+
+localStorage 使用方法：
+&lt;script type=&quot;text/javascript&quot;&gt;
+localStorage.lastname=&quot;Smith&quot;;
+document.write(localStorage.lastname);
+&lt;/script&gt;
+
+sessionStorage 使用方法：
+&lt;script type=&quot;text/javascript&quot;&gt;
+sessionStorage.lastname=&quot;Smith&quot;;
+document.write(sessionStorage.lastname);
+&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>iframe有那些缺点？</li>
+</ul>
+<pre><code>1. iframe 会阻塞主页面的 Onload 事件；
+2. 搜索引擎的检索程序无法解读这种页面，不利于 SEO;
+3. iframe 和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。
+4. 如果需要使用 iframe，最好是通过 javascript 动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题。
+</code></pre>
+
+<ul>
+<li>Label的作用是什么？是怎么用的？（加 for 或 包裹）</li>
+</ul>
+<pre><code>label 标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。
+</code></pre>
+
+<ul>
+<li>
+<p>HTML5 的 form 如何关闭自动完成功能？<br />
+<pre><code>autocomplete=off
+</code></pre></p>
+</li>
+<li>
+<p>如何实现浏览器内多个标签页之间的通信?<br />
+<pre><code>WebSocket、SharedWorker(这个不是很懂，可以查看 w3c 的文档[https://www.w3.org/TR/2015/WD-workers-20150924/])
+也可以调用 localstorge、cookies 等本地存储方式；
+
+localstorge 另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，
+我们通过监听事件，控制它的值来进行页面信息通信；
+注意 quirks：Safari 在无痕模式下设置 localstorge 值时会抛出 QuotaExceededError。 的异常；
+</code></pre><br />
+参考阅读：<a href="http://www.html5rocks.com/zh/tutorials/websockets/basics/">WebSockets 简介：将套接字引入网络</a></p>
+</li>
+<li>
+<p>webSocket如何兼容低浏览器？(阿里)<br />
+<pre><code>长轮询:对服务器发起的链接创建假象。利用长轮询，客户端可打开指向服务器的 HTTP 连接，而服务器会一直保持连接打开，直到发送响应。
+
+其他包括 Flash、XHR multipart 请求和所谓的 htmlfiles
+</code></pre></p>
+</li>
+<li>
+<p>如何在页面上实现一个圆形的可点击区域？<br />
+<pre><code>1. map+area 或者 svg
+2. border-radius
+3. JS 实现
+</code></pre></p>
+</li>
+<li>
+<p>实现不使用 border 画出 1px 高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。<br />
+<pre><code>&lt;div style=&quot;height:1px;overflow:hidden;background:blue&quot;&gt;&lt;/div&gt;
+</code></pre></p>
+</li>
+<li>
+<p>网页验证码是干嘛的，是为了解决什么安全问题。<br />
+<pre><code>区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水；
+可以有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试。
+</code></pre></p>
+</li>
+<li>
+<p>title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别？<br />
+<pre><code>1. title 属性没有明确意义只表示是个标题，h1 则表示层次明确的标题，对页面信息的抓取也有很大的影响；
+2. strong 是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：&lt;strong&gt; 会重读，而 &lt;b&gt; 展示强调内容。
+
+3. i 内容展示为斜体，em 表示强调的文本；
+</code></pre></p>
+</li>
+<li></li>
+</ul>
+<h2 id="css"><a name="user-content-css" href="#css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><a name="css">CSS</a></h2>
+<ul>
+<li>标准的 CSS 盒子模型？与低版本的盒子模型有什么不同？</li>
+</ul>
+<pre><code>1. 盒模型有两种：IE 盒子模型，W3C 盒子模型（标准盒子模型）。
+2. CSS 盒模型包括：margin（外边距），border（边框），padding（内边距），内容(content)。
+3. IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width  属性不是内容的宽度，而是内容、内边距和边框的宽度的总和
+</code></pre>
+
+<ul>
+<li>CSS 选择符有哪些？哪些属性可以继承？</li>
+</ul>
+<pre><code>1. 元素选择器（div, h1, p）
+2. id 选择器（#id）
+3. 类选择器（.class）
+4. 属性选择器（*[name=&quot;title&quot;]）(子串匹配属性选择器:[abc^=&quot;def&quot;])
+5. 相邻兄弟选择器（h1 + p）
+6. 子选择器（ul &gt; li）
+7. 后代选择器（li a）
+8. 伪类选择器（a:hover, li:nth-child）
+9. 通配符选择器（ * ）
+
+可以继承的样式： font-family font-size color, UL LI DL DD DT;
+不可继承的样式： margin border padding  width height;
+</code></pre>
+
+<ul>
+<li>CSS3 新增的伪类有哪些？</li>
+</ul>
+<pre><code>新的伪类：
+:target， :enabled 和 :disabled，
+:checked， :indeterminate， :root，
+:nth-child 和 :nth-last-child，
+:nth-of-type 和 :nth-last-of-type，
+:first-of-type 和 :last-of-type，
+:last-child :only-child 和 :only-of-type，
+:empty， 和 :not。
+</code></pre>
+
+<ul>
+<li>CSS 优先级算法</li>
+</ul>
+<p><pre><code>1. 优先级就是一个 应用于指定的 CSS 声明的权重，它由 匹配的选择器中的每一种选择器类型的 数值 决定。而当优先级与多个 CSS 声明中任意一个声明的优先级相等的时候，CSS 中最后的那个声明将会被应用到元素上。当同一个元素有多个声明的时候，优先级才会有意义。因为每一个直接作用于元素的 CSS 规则总是会接管/覆盖（take over）该元素从祖先元素继承而来的规则。
+2. 优先级就近原则，同权重情况下样式定义最近者为准;载入样式以最后载入的定位为准;
+   优先级为: !important &gt;  id &gt; class &gt; tag
+3. 注意：当在一个样式声明上使用 !important 规则时，该样式声明会覆盖 CSS 中任何其他的声明,。尽管技术上 !important 与优先级毫无关系，但是它们之间直接相互影响。
+   使用 !important 是一个坏习惯，应该尽量避免，因为这打断了样式表中的固有的级联规则，使得调试找 bug 变得更加困难了。当两条相互冲突的带有!important 规则的声明被应用到相同的元素上时，拥有更大优先级的声明将会被采用。
+</code></pre><br />
+- 如何居中 div？如何居中一个浮动元素？如何让绝对定位的 div 居中？<br />
+    + 居中 div:给 div 设置一个宽度，然后设置 margin:0,auto</p>
+<pre><code>    ```
+        div {
+            width:200px;
+            margin:0 auto;
+            }
+    ```
+
++ 居中浮动元素
+
+    ```
+    .div{
+        width:500px;/*规定宽度为500px,高度可选*/
+        height:300px;
+        color:#fff;
+        background:#000;
+        margin-left:50%;/* 让元素左边界位于中间*/
+        position:relative;/* 设置相对定位*/
+        left:-250px;/* 设置-left/2  也就是500px/2使元素居中 */
+            }
+    ```
+
++ 绝对定位的 div 居中
+
+    ```
+        position: absolute;
+        width: 1200px;
+        background: none;
+        margin: 0 auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    ```
+</code></pre>
+<p>扩展阅读：<br />
+    1. <a href="http://www.w3cplus.com/css/elements-horizontally-center-with-css.html">六种实现元素水平居中的方法</a><br />
+    2. <a href="www.ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex 布局教程：语法篇</a><br />
+    3. <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex">flex - CSS | MDN</a></p>
+<ul>
+<li>display 有哪些值？说明他们的作用。</li>
+</ul>
+<pre><code>block:此元素将显示为块级元素，此元素前后会带有换行符。
+inline: 默认。此元素会被显示为内联元素，元素前后没有换行符。
+inline-block:象行内元素一样显示，但其内容象块类型元素一样显示。
+none:此元素不会被显示。
+list-item:此元素会作为列表显示。
+table:此元素会作为块级表格来显示。
+flex:弹性布局（Flexible Box）
+</code></pre>
+
+<ul>
+<li>position 的值 relative 和 absolute 定位原点是？</li>
+</ul>
+<pre><code>absolute：生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。
+fixed （老IE不支持）：生成绝对定位的元素，相对于浏览器窗口进行定位。
+relative：生成相对定位的元素，相对于其正常位置进行定位。
+inherit：规定从父元素继承 position 属性的值。
+</code></pre>
+
+<ul>
+<li>CSS3 有哪些新特性？</li>
+</ul>
+<p><pre><code>1. 新增各种CSS选择器
+2. 圆角:border-radius
+3. 多列布局：multi-column layout
+4. 阴影和反射：Shadow\Reflect
+5. 文字特效、文字渲染
+6. 线性渐变：gradient
+7. 旋转：transform
+8. 增加了旋转,缩放,定位,倾斜,动画，多背景
+</code></pre><br />
+参考阅读：<br />
+1. <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3">CSS3 | MDN</a><br />
+2. <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_multi-column_layouts">使用CSS的多列布局</a><br />
+3. <a href="http://www.css88.com/book/css/properties/only-webkit/box-reflect.htm">CSS3 参考手册 box-reflect</a></p>
+<ul>
+<li>请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？</li>
+</ul>
+<p><pre><code>flexbox 布局模式被用来重新定义 CSS 中的布局方式。
+CSS3 弹性框(Flexible Box 或 Flexbox)，是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当排布行为的布局方式。对很多应用程序来说，由于不使用浮动，且弹性容器的外边距也不会与其内容的外边距合并，弹性框模型比起方框模型要好一些。
+
+应用场景：网格布局，圣杯布局，输入框的布局，固定的底栏
+</code></pre><br />
+参考阅读：<br />
+1. <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex 布局教程：语法篇</a><br />
+2. <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">Flex 布局教程：实例篇</a><br />
+3. <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">使用 CSS 弹性框 | MDN</a><br />
+4. <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></p>
+<ul>
+<li>用纯 CSS 创建一个三角形的原理是什么？</li>
+</ul>
+<pre><code>把其中三条边框隐藏掉，注：IE6下把边框设置成 transparent 时会出现黑影，并不会透明，把 border-style 设置成 dashed 可以解决。
+
+.triangle{
+    width:0;
+    height:0;
+    border-width:20px;
+    border-style:solid dashed dashed dashed;
+    border-color:#e66161 transparent transparent transparent;
+}
+</code></pre>
+
+<ul>
+<li>
+<p>一个满屏品字布局何设计?<br />
+<pre><code> 设置上面的 div 宽 100%，下面的两个 div 分别宽 50%，然后用 float 或者 inline 使其不换行即可
+</code></pre></p>
+</li>
+<li>
+<p>li 与 li 之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</p>
+</li>
+</ul>
+<pre><code>行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为 0，就没有空格了。
+</code></pre>
+
+<ul>
+<li>
+<p>为什么要 CSS Reset?<br />
+<pre><code>1. 浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
+
+最简单的初始化方法： * {padding: 0; margin: 0;} （强烈不建议）
+</code></pre></p>
+</li>
+<li>
+<p>absolute 的 containing block 计算方式跟正常流有什么不同？</p>
+</li>
+</ul>
+<pre><code>1. static(默认的)/relative：简单说就是它的父元素的内容框（即去掉padding的部分）
+2. absolute: 向上找最近的定位为absolute/relative的元素
+3. fixed: 它的 containing block 一律为根元素(html/body)，根元素也是 initial containing block
+
+无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
+1、若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形；
+2、否则,则由这个祖先元素的 padding box 构成。
+如果都找不到，则为 initial containing block。
+</code></pre>
+
+<ul>
+<li>CSS 里的 visibility 属性有个 collapse 属性值是干嘛用的？在不同浏览器下以后什么区别？</li>
+</ul>
+<pre><code>visibility:collapse 当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 &quot;hidden&quot;。
+
+注意：有些现代浏览器对 visibility: collapse 不支持或是不完全支持。很多时候用在不是表格行与列的元素上时不会正确的将它显示成 visibility: hidden 的效果。
+
+visibility:collapse 会改变表格的布局，嵌套在其被折叠的单元格中的表格也会同样被折叠，除非专门为此嵌套表格指定 visibility: visible 。
+
+
+</code></pre>
+
+<ul>
+<li>css定义的权重<br />
+<pre><code>以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：
+
+/*权重为1*/
+div{
+}
+/*权重为10*/
+.class1{
+}
+/*权重为100*/
+#id1{
+}
+/*权重为100+1=101*/
+#id1 div{
+}
+/*权重为10+1=11*/
+.class1 div{
+}
+/*权重为10+10+1=21*/
+.class1 .class2 div{
+}
+
+如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现。
+</code></pre></li>
+</ul>
+<h2 id="javascript"><a name="user-content-javascript" href="#javascript" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><a name="js">JavaScript</a></h2>
+<ul>
+<li>JavaScript 的基本数据类型</li>
+</ul>
+<pre><code>1. 字符串（string）
+2. 数字（Number）
+3. 布尔值（Boolean）
+4. Undefind
+5. Null
+</code></pre>
+
+<ul>
+<li>js有哪些内置对象？<br />
+<pre><code>Object 是 JavaScript 中所有对象的父对象。
+数据封装类对象：Object、Array、Boolean、Number 和 String。
+其他对象：Function、Arguments、Math、Date、RegExp、Error 。
+</code></pre></li>
+<li>JavaScript 的基本规范</li>
+</ul>
+<p><pre><code>简单地列出一些：
+1. 不要在同一行申明多个变量
+2. 使用===/!==来比较 true/false
+3. 使用对象字面量
+4. For 循环必须使用大括号
+5. If 语句必须使用大括号
+6. for-in 循环中的变量 应该使用var关键字明确限定作用域，从而避免作用域污染。
+7. 不要使用全局函数
+8. 函数不应该有时候有返回值，有时候没有返回值。
+9. Switch 语句必须带有 default 分支
+</code></pre><br />
+可参考百度 FEX 的 <a href="https://github.com/fex-team/styleguide">JavaScript 编码规范</a></p>
+<ul>
+<li>JavaScript 原型，原型链 ? 有什么特点？</li>
+</ul>
+<p><pre><code>每个对象都有一个 prototype （原型） 属性，这个属性是一个指针，指向这个对象。这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。（详见《JavaScript 高级程序设计》第六章第二节）。
+如果让原型对象等于另一个类型的实例，此时的原型对象将包含一个指向另一个原型的指针，相应地，另一个原型中也包含着一个指向另一个构造函数的指针，加入另一个原型又是另一个类型的实例，如此层层递进，就构成了原型链。
+
+特点：
+JavaScript 对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变。
+</code></pre><br />
+- JavaScript 有几种类型的值？（堆：原始数据类型和 栈：引用数据类型），你能画一下他们的内存图吗？<br />
+<pre><code>栈：原始数据类型（Undefined，Null，Boolean，Number、String）
+堆：引用数据类型（对象、数组和函数）
+
+在 ECMAScript 中，变量可以存在两种类型的值，即原始值和引用值。
+原始值:存储在栈（stack）中的简单数据段，也就是说，它们的值直接存储在变量访问的位置。
+引用值:存储在堆（heap）中的对象，也就是说，存储在变量处的值是一个指针（point），指向存储对象的内存处。
+为变量赋值时，ECMAScript 的解释程序必须判断该值是原始类型，还是引用类型。要实现这一点，解释程序则需尝试判断该值是否为 ECMAScript 的原始类型之一，即 Undefined、Null、Boolean、Number 和 String 型。由于这些原始类型占据的空间是固定的，所以可将他们存储在较小的内存区域 - 栈中。这样存储便于迅速查寻变量的值。
+如果一个值是引用类型的，那么它的存储空间将从堆中分配。由于引用值的大小会改变，所以不能把它放在栈中，否则会降低变量查寻的速度。相反，放在变量的栈空间中的值是该对象存储在堆中的地址。地址的大小是固定的，所以把它存储在栈中对变量性能无任何负面影响。
+</code></pre><br />
+<img alt="内存图" src="///C://MySpace/front-end-study/Front-end-Developer-Questions/ct_js_value.gif" /></p>
+<ul>
+<li>
+<p>JavaScript 如何实现继承？<br />
+<pre><code>1. 构造继承
+2. 原型继承
+3. 实例继承
+4. 拷贝继承
+
+原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式。
+</code></pre><br />
+参考阅读：<a href="http://w3school.com.cn/js/pro_js_inheritance_implementing.asp">ECMAScript 继承机制实现</a></p>
+</li>
+<li>
+<p>Javascript创建对象的几种方式？</p>
+<ul>
+<li>
+<p>原始方式 <code>var object1=new Object</code></p>
+</li>
+<li>
+<p>工厂方式</p>
+<pre><code>    function createObject() {
+      var thisObject = new Object;
+      thisObject.color = &quot;blue&quot;;
+
+      return thisObject;
+    }
+
+    var object1 = createObject();
+</code></pre>
+
+</li>
+<li>
+<p>构造函数方式</p>
+<pre><code>    function Car(sColor,iDoors,iMpg) {
+      this.color = sColor;
+      this.doors = iDoors;
+      this.mpg = iMpg;
+      this.showColor = function() {
+        alert(this.color);
+      };
+    }
+
+    var oCar1 = new Car(&quot;red&quot;,4,23);
+</code></pre>
+
+<p>在书写上构造函数跟其他函数是没有什么区别的，主要的区别还是在使用上，构造函数需要使用 new 操作符。<br />
+这样的构造函数有一个缺陷，就是每个方法都会在每个实例上创建一次，因为每次创建都需要分配内存空间，但是有时候这样的特性还是有用的，主要是要控制它们，在不使用的时候释放内存。</p>
+</li>
+<li>
+<p>原型方式</p>
+<pre><code>    function Car() {
+    }
+
+    Car.prototype.color = &quot;blue&quot;;
+    Car.prototype.doors = 4;
+    Car.prototype.mpg = 25;
+    Car.prototype.showColor = function() {
+        alert(this.color);
+    };
+
+    var oCar1 = new Car();
+</code></pre>
+
+<p>原型的所有属性都被立即赋予要创建的对象，意味着所有 Car 实例存放的都是指向 showColor() 函数的指针。从语义上讲，所有属性看起来都属于一个对象，因此解决了前面两种方式存在的问题。但是如果需要保持原对象属性值是每一个对象特有的，而不是共享的，那就要联合使用构造函数和原型方式。<br />
+    + 混合的构造函数/原型方式</p>
+<pre><code>    var Computer = function(name){
+        this.name = name;
+    }
+    Computer.prototype.showMessage = function(){
+        alert(this.name);
+    }
+    var apple = new Computer('apple');
+    apple.showMessage();
+</code></pre>
+
+</li>
+<li>
+<p>动态原型方法</p>
+<pre><code>    function Car(sColor,iDoors,iMpg) {
+      this.color = sColor;
+      this.doors = iDoors;
+      this.mpg = iMpg;
+      this.drivers = new Array(&quot;Mike&quot;,&quot;John&quot;);
+
+      if (typeof Car._initialized == &quot;undefined&quot;) {
+        Car.prototype.showColor = function() {
+          alert(this.color);
+        };
+
+        Car._initialized = true;
+      }
+    }
+</code></pre>
+
+</li>
+<li>
+<p>混合工厂方式(这种方式通常是在不能应用前一种方式时的变通方法。它的目的是创建假构造函数，只返回另一种对象的新实例。)</p>
+<pre><code>function Car() {
+  var oTempCar = new Object;
+  oTempCar.color = &quot;blue&quot;;
+  oTempCar.doors = 4;
+  oTempCar.mpg = 25;
+  oTempCar.showColor = function() {
+    alert(this.color);
+  };
+
+  return oTempCar;
+}
+var car = new Car();
+
+注意：由于在 Car() 构造函数内部调用了 new 运算符，所以将忽略第二个 new 运算符（位于构造函数之外），在构造函数内部创建的对象被传递回变量 car。
+这种方式在对象方法的内部管理方面与经典方式有着相同的问题。强烈建议：除非万不得已，还是避免使用这种方式。
+</code></pre>
+
+</li>
+<li>
+<p>寄生构造函数模式</p>
+<pre><code>    var test = function(name){
+        return {'name':name}
+    }
+    var g = new test('apple');
+</code></pre>
+
+</li>
+</ul>
+</li>
+</ul>
+<p>参考阅读：<a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0MzAzMw==&amp;mid=2652201871&amp;idx=1&amp;sn=c3b440a87c212015371f365c1d2b6e01&amp;scene=4#wechat_redirect">前端开发基础－JavaScript（二）-面向对象部分</a></p>
+<h2 id="-javascript"><a name="user-content--javascript" href="#-javascript" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>- Javascript作用链域?</h2>
+<pre><code>全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节。
+当需要从局部函数查找某一属性或方法时，如果当前作用域没有找到，就会上溯到上层作用域查找，直至全局函数，这种组织形式就是作用域链。
+</code></pre>
+
+<ul>
+<li>谈谈 This 对象的理解</li>
+</ul>
+<pre><code>this 总是指向函数的直接调用者（而非间接调用者）；
+如果有 new 关键字，this 指向 new 出来的那个对象；
+在事件中，this 指向触发这个事件的对象，特殊的是，IE 中的 attachEvent 中的 this 总是指向全局对象 Window；
+
+</code></pre>
+
+<p>详细可以阅读：<a href="http://gold.xitu.io/entry/576b81ae7db2a20054dad214">JavaScript 之 this 详解</a></p>
+<ul>
+<li>eval 是做什么的？</li>
+</ul>
+<pre><code>eval 可以把对应的字符串解析成JS代码并运行；
+应该避免使用 eval，不安全，非常耗性能（2 次，一次解析成 js 语句，一次执行）。
+</code></pre>
+
+<ul>
+<li>
+<p>什么是 window 对象? 什么是 document 对象?<br />
+<pre><code>window：浏览器对象，它表示浏览器窗口。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。甚至 HTML DOM 的 document 也是 window 对象的属性之一。
+document:文档对象
+</code></pre></p>
+</li>
+<li>
+<p>null，undefined的区别？<br />
+<pre><code>null        表示一个对象被定义了，值为“空值”；
+undefined   表示不存在这个值。
+
+typeof undefined //&quot;undefined&quot;
+    undefined :是一个表示&quot;无&quot;的原始值或者说表示&quot;缺少值&quot;，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回 undefined； 
+    例如变量被声明了，但没有赋值时，就等于undefined
+
+typeof null //&quot;object&quot;
+    null : 是一个对象(空对象, 没有任何属性和方法)；
+
+</code></pre><br />
+参考阅读：<br />
+1. <a href="https://leohxj.gitbooks.io/front-end-database/content/javascript-basic/difference-between-undefined-and-null.html">undefined 与 null 的区别</a><br />
+2. <a href="http://yanhaijing.com/javascript/2014/01/05/exploring-the-abyss-of-null-and-undefined-in-javascript/">探索 JavaScript 中 Null 和 Undefined 的深渊</a></p>
+</li>
+</ul></article></body></html>
