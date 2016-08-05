@@ -447,6 +447,32 @@ div{
 如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现。
 ```
 
+- 请解释一下为什么会出现浮动和什么时候需要清除浮动？清除浮动的方式？
+
+```
+由于浮动的特性，在布局中使用就产生了两个问题——会对后面的元素造成影响而且造成浮动元素的容器高度失效。
+清除浮动（clearfix hack）：简单方法： 设置 overflow: auto;可以在大多数浏览器中工作。如果需要支持 IE6 ,需要 zoom: 1;
+```
+参考阅读：[What methods of ‘clearfix’ can I use?](http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use)
+
+- 移动端的布局用过媒体查询吗？
+```
+媒体查询 包含了一个媒体类型和至少一个使用如宽度、高度和颜色等媒体属性来限制样式表范围的表达式。CSS3 加入的媒体查询使得无需修改内容便可以使样式应用于某些特定的设备范围。
+
+<!-- link元素中的CSS媒体查询 -->
+<link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
+
+<!-- 样式表中的CSS媒体查询 -->
+<style>
+@media (max-width: 600px) {
+  .facet_sidebar {
+    display: none;
+  }
+}
+</style>
+```
+参考阅读：[CSS 媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)
+
 - position 跟 display、margin collapse、overflow、float 这些特性相互叠加后会怎么样？
 
 ## <a name="js">JavaScript</a>
@@ -693,4 +719,21 @@ use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式�
      1. 创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
      2. 属性和方法被加入到 this 引用的对象中。
      3. 新创建的对象由 this 所引用，并且最后隐式的返回 this 。
+```
+
+- ["1", "2", "3"].map(parseInt) 答案是多少？
+```
+[1,NaN.NaN] 
+```
+参考：[http://justjavac.iteye.com/blog/2019153](http://justjavac.iteye.com/blog/2019153)
+
+- 什么是闭包（closure），为什么要用它？
+```
+闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。
+
+闭包的特性：
+
+1.函数内再嵌套函数
+2.内部函数可以引用外层的参数和变量
+3.参数和变量不会被垃圾回收机制回收
 ```
