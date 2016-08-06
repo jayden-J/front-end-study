@@ -5,8 +5,13 @@
 
   var easingFactor = 5.0;
   var backgroundColor = '#000';
+<<<<<<< HEAD
   var nodeColor = '#aaabac';
   var edgeColor = '#aaabac';
+=======
+  var nodeColor = '#faf5f7';
+  var edgeColor = '#faf5f7';
+>>>>>>> 6da0deb77cfc6bb32a20347f3840933b804ad16f
 
   var nodes = [];
   var edges = [];
