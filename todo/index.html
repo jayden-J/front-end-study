@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <title>Todo List</title>
     <link rel="stylesheet" type="text/css" href="todomvc-app-css/index.css">
+    <style>
+      [v-cloak] {
+        display: none;
+    }
+    </style>
 </head>
 
 <body>
@@ -16,10 +21,10 @@
         </header>
         <section v-cloak>
             <ul class="todo-list">
-                <li class="todo" v-for="todo in filteredTodos" :class="{completed: todo.completed}" v-cloak>
+                <li class="todo" v-for="todo in filteredTodos" :class="{completed: todo.completed}">
                     <div class="view">
                         <input class="toggle" type="checkbox" v-model="todo.completed">
-                        <label>{{todo.value}}</label>
+                        <label v-cloak>{{todo.value}}</label>
                         <button class="destroy" @click="removeTodo(todo)"></button>
                     </div>
                 </li>
