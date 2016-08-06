@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="todomvc-app-css/index.css">
+</head>
+
+<body>
+    <section class="todoapp">
+        <header id="header" class="header">
+            <h1>Todos</h1>
+             <input class="new-todo" autofocus autocomplete="off" placeholder="请输入待办事项" v-model="newTodo" @keyup.enter="addTodo">
+            <!-- <input type="checkbox"> -->
+        </header>
+        <section v-cloak>
+            <ul class="todo-list">
+                <li class="todo" v-for="todo in todos" :class="{completed: todo.completed}">
+                    <div class="view">
+                     <input class="toggle" type="checkbox" v-model="todo.completed">
+                        <label>{{todo.value}}</label>
+                        <button class="destroy" @click="removeTodo(todo)"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <footer class="footer" v-show="todos.length" v-cloak>
+                <ul class="filters">
+                    <li><a @click="select('all')" :class="{selected:visit =='all'}">全部</a></li>
+                    <li><a @click="select('active')" :class="{selected:visit =='active'}">待办</a></li>
+                    <li><a @click="select('completed')" :class="{selected: visit == 'completed'}">已完成</a></li>
+                </ul>
+        </footer>
+    </section>
+    <div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
