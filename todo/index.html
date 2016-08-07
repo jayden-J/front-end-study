@@ -6,7 +6,7 @@
     <title>Todo List</title>
     <link rel="stylesheet" type="text/css" href="todomvc-app-css/index.css">
     <style>
-      [v-cloak] {
+    [v-cloak] {
         display: none;
     }
     </style>
@@ -21,16 +21,19 @@
         </header>
         <section v-cloak>
             <ul class="todo-list">
-                <li class="todo" v-for="todo in filteredTodos" :class="{completed: todo.completed}">
+                <li class="todo" v-for="todo in filteredTodos" :class="{completed: todo.completed,editing: todo == editedTodo}">
                     <div class="view">
                         <input class="toggle" type="checkbox" v-model="todo.completed">
-                        <label v-cloak>{{todo.value}}</label>
+                        <label @dblclick="editTodo(todo)">{{todo.value}}<span class="todo-time"> {{todo.endTime}}</span></label>
                         <button class="destroy" @click="removeTodo(todo)"></button>
                     </div>
+                    <input class="edit" type="text" v-model="todo.value" v-todo-focus="todo == editedTodo" @keyup.enter="doneEdit(todo)" @keyup.esc="cancelEdit(todo)">
+                    <input class="edit" type="datetime-local" v-model="todo.endTime" v-todo-focus="todo == editedTodo" @keyup.enter="doneEdit(todo)" @keyup.esc="cancelEdit(todo)" placeholder="完成时间">
+                     <input class="edit" type="text" v-model="todo.comment" v-todo-focus="todo == editedTodo" @keyup.enter="doneEdit(todo)" @keyup.esc="cancelEdit(todo)" placeholder="备注">
                 </li>
             </ul>
         </section>
-        <footer class="footer" v-show="todos.length" v-cloak>
+        <footer v-show="todos.length" class="footer" v-cloak>
             <span class="todo-count">剩余
      <strong v-text="remaining"></strong> 个待办
             </span>
@@ -39,10 +42,16 @@
                 <li><a @click="select('active')" :class="{selected:visit =='active'}">待办</a></li>
                 <li><a @click="select('completed')" :class="{selected: visit == 'completed'}">已完成</a></li>
             </ul>
+             <button class="clear-completed" @click="removeCompleted" v-show="todos.length > remaining">
+                清除已完成的任务
+            </button>
         </footer>
     </section>
-    <div>
-    </div>
+    <footer class="info">
+        <p>回车添加待办事项</p>
+        <p>双击待办可编辑内容、时间以及备注，回车保存，ESC 键取消编辑</p>
+        <p>来看看我的 <a href="https://jayden-j.github.io">blog</a> 呗</p>
+    </footer>
     <script src="node_modules/vue/dist/vue.js"></script>
     <script src="js/index.js"></script>
 </body>
