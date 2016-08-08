@@ -473,33 +473,6 @@ div{
 ```
 参考阅读：[CSS 媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)
 
-- CSS 优化、提高性能的方法有哪些？
-
-```
-1. 尽量将样式写在单独的 css 文件里面，在 head 元素中引用。原因：
-（1）内容和样式分离，易于管理和维护
-（2）减少页面体积
-（3）css 文件可以被缓存、重用，维护成本降低
-2. 不使用 @import,@import 会影响 css 文件的加载速度。
-
-3. 避免使用复杂的选择器，层级越少越好，建议选择器的嵌套最好不要超过三层。
-
-4. 精简页面的样式文件，去掉不用的样式，根据当前页面需要的 css 去合并那些当前页面用到的 css 文件。
-
-5. 利用 css 继承减少代码量，常见的可以继承的属性比如：color，font-size，font-family 等等
-```
-
-参考： [CSS 代码重构与优化之路](http://luopq.com/2016/01/05/css-optimize/)
-
-- 浏览器是怎样解析CSS选择器的？
-```
-样式系统从关键选择器开始匹配规则，然后左移（查找规则选择器的任何祖先元素）。只要选择器的子树（substree）一直在检查，样式系统就会持续左移，直到和规则匹配，或者是因为不匹配而放弃该条规则。
-```
-
-参考：
-1. [CSS 选择器从右向左的匹配规则](http://www.cnblogs.com/zhaodongyu/p/3341080.html)
-2. [winter 大大的视频：浏览器的背后（续）](http://v.youku.com/v_show/id_XMjMzMzU2NDc2.html)
-
 - position 跟 display、margin collapse、overflow、float 这些特性相互叠加后会怎么样？
 
 ## <a name="js">JavaScript</a>
@@ -544,9 +517,7 @@ Object 是 JavaScript 中所有对象的父对象。
 特点：
 JavaScript 对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变。
 ```
-
 - JavaScript 有几种类型的值？（堆：原始数据类型和 栈：引用数据类型），你能画一下他们的内存图吗？
-
 ```
 栈：原始数据类型（Undefined，Null，Boolean，Number、String）
 堆：引用数据类型（对象、数组和函数）
@@ -751,14 +722,12 @@ use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式�
 ```
 
 - ["1", "2", "3"].map(parseInt) 答案是多少？
-
 ```
 [1,NaN.NaN] 
 ```
 参考：[http://justjavac.iteye.com/blog/2019153](http://justjavac.iteye.com/blog/2019153)
 
 - 什么是闭包（closure），为什么要用它？
-
 ```
 闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。
 
@@ -767,34 +736,4 @@ use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式�
 1.函数内再嵌套函数
 2.内部函数可以引用外层的参数和变量
 3.参数和变量不会被垃圾回收机制回收
-```
-
-- Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？
-
-```
-hasOwnProperty
-
-javaScript中hasOwnProperty函数方法是返回一个布尔值，指出一个对象是否具有指定名称的属性。此方法无法检查该对象的原型链中是否具有该属性；该属性必须是对象本身的一个成员。
-使用方法：
-object.hasOwnProperty(proName)
-其中参数object是必选项。一个对象的实例。
-proName是必选项。一个属性名称的字符串值。
-```
-
-- 对 JSON 的了解？
-
-```
-JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
-它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
-如：{"age":"12", "name":"back"}
-
-JSON字符串转换为JSON对象:
-var obj =eval('('+ str +')'); //慎用
-var obj = str.parseJSON();
-var obj = JSON.parse(str);
-
-JSON对象转换为JSON字符串：
-var last=obj.toJSONString();
-var last=JSON.stringify(obj);```
-
 ```
