@@ -737,3 +737,33 @@ use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式�
 2.内部函数可以引用外层的参数和变量
 3.参数和变量不会被垃圾回收机制回收
 ```
+
+- Javascript 中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？
+
+```
+hasOwnProperty
+
+javaScript中hasOwnProperty函数方法是返回一个布尔值，指出一个对象是否具有指定名称的属性。此方法无法检查该对象的原型链中是否具有该属性；该属性必须是对象本身的一个成员。
+使用方法：
+object.hasOwnProperty(proName)
+其中参数object是必选项。一个对象的实例。
+proName是必选项。一个属性名称的字符串值。
+```
+
+- 对 JSON 的了解？
+
+```
+JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
+它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
+如：{"age":"12", "name":"back"}
+
+JSON字符串转换为JSON对象:
+var obj =eval('('+ str +')'); //慎用
+var obj = str.parseJSON();
+var obj = JSON.parse(str);
+
+JSON对象转换为JSON字符串：
+var last=obj.toJSONString();
+var last=JSON.stringify(obj);```
+
+```
