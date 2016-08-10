@@ -422,6 +422,7 @@ visibility:collapse 会改变表格的布局，嵌套在其被折叠的单元格
 ```
 
 - css定义的权重
+
 ```
 以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：
 
@@ -456,6 +457,7 @@ div{
 参考阅读：[What methods of ‘clearfix’ can I use?](http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use)
 
 - 移动端的布局用过媒体查询吗？
+
 ```
 媒体查询 包含了一个媒体类型和至少一个使用如宽度、高度和颜色等媒体属性来限制样式表范围的表达式。CSS3 加入的媒体查询使得无需修改内容便可以使样式应用于某些特定的设备范围。
 
@@ -474,6 +476,21 @@ div{
 参考阅读：[CSS 媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)
 
 - position 跟 display、margin collapse、overflow、float 这些特性相互叠加后会怎么样？
+
+- margin 和 padding 分别适合什么场景使用？
+
+```
+何时应当使用 margin
+  1.需要在 border 外侧添加空白时。
+  2.空白处不需要背景（色）时。
+  3.上下相连的两个盒子之间的空白，需要相互抵消时。
+
+何时应当时用 padding
+  1.需要在 border 内测添加空白时。
+  2.空白处需要背景（色）时。
+  3.上下相连的两个盒子之间的空白，希望等于两者之和时。
+```
+参考：[用 Margin 还是用 Padding](http://www.hicss.net/use-margin-or-padding/)
 
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
@@ -767,3 +784,24 @@ var last=obj.toJSONString();
 var last=JSON.stringify(obj);```
 
 ```
+
+- js 延迟加载的方式有哪些？
+
+```
+defer 和 async、动态创建 DOM 方式（用得最多）、按需异步载入 js
+```
+
+- Ajax 是什么? 如何创建一个 Ajax？
+
+```
+ajax 的全称：Asynchronous Javascript And XML。
+异步传输+ js + xml。
+所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果它自己会根据设定进行后续操作，与此同时，页面是不会发生整页刷新的，提高了用户体验。
+
+(1)创建 XMLHttpRequest 对象,也就是创建一个异步调用对象
+(2)创建一个新的 HTTP 请求,并指定该 HTTP 请求的方法、URL 及验证信息
+(3)设置响应 HTTP 请求状态变化的函数
+(4)发送 HTTP 请求
+(5)获取异步调用返回的数据
+(6)使用 JavaScript 和 DOM 实现局部刷新
+``` 
