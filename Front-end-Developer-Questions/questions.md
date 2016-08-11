@@ -492,6 +492,22 @@ div{
 ```
 参考：[用 Margin 还是用 Padding](http://www.hicss.net/use-margin-or-padding/)
 
+- 元素竖向的百分比设定是相对于容器的高度吗？
+
+```
+元素竖向的百分比设定是相对于容器的宽度，而不是高度。当按百分比设定一个元素的宽度时，它是相对于父容器的宽度计算的，但是，对于一些表示竖向距离的属性，例如 padding-top,padding-bottom,margin-top,margin-bottom 等，当按百分比设定它们时，依据的也是父容器的宽度，而不是高度。
+```
+
+- ::before 和 :after 中双冒号和单冒号有什么区别？解释一下这 2 个伪元素的作用。
+
+```
+单冒号(:)用于 CSS3 伪类，双冒号(::)用于 CSS3 伪元素。CSS3 规范中的要求使用双冒号(::)表示伪元素，以此来区分伪元素和伪类，比如 ::before 和 ::after 等伪元素使用双冒号(::)，:hover 和 :active 等伪类使用单冒号(:)。除了一些低于 IE8 版本的浏览器外，大部分浏览器都支持伪元素的双冒号(::)表示方法。
+
+::  before 在被选元素前插入内容。需要使用content属性来指定要插入的内容。被插入的内容实际上不在文档树中。:after 在被元素后插入内容，其用法和特性与 :before 相似。
+```
+
+参考阅读：[总结伪类和伪元素](http://www.alloyteam.com/2016/05/summary-of-pseudo-classes-and-pseudo-elements/)
+
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
 
