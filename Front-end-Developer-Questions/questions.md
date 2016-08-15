@@ -508,6 +508,17 @@ div{
 
 参考阅读：[总结伪类和伪元素](http://www.alloyteam.com/2016/05/summary-of-pseudo-classes-and-pseudo-elements/)
 
+- 什么是 CSS 预处理器 / 后处理器？
+
+```
+- 预处理器例如：LESS、Sass、Stylus，用来预编译 Sass 或 less，增强了 css 代码的复用性，
+  还有层级、mixin、变量、循环、函数等，具有很方便的 UI 组件模块化开发能力，极大的提高工作效率。
+
+- 后处理器例如：PostCSS，通常被视为在完成的样式表中根据 CSS 规范处理 CSS，让其更有效；目前最常做的
+  是给 CSS 属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。
+```
+
+
 ## <a name="js">JavaScript</a>
 - JavaScript 的基本数据类型
 
@@ -813,11 +824,18 @@ defer 和 async、动态创建 DOM 方式（用得最多）、按需异步载入
 ajax 的全称：Asynchronous Javascript And XML。
 异步传输+ js + xml。
 所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果它自己会根据设定进行后续操作，与此同时，页面是不会发生整页刷新的，提高了用户体验。
-
 (1)创建 XMLHttpRequest 对象,也就是创建一个异步调用对象
 (2)创建一个新的 HTTP 请求,并指定该 HTTP 请求的方法、URL 及验证信息
 (3)设置响应 HTTP 请求状态变化的函数
 (4)发送 HTTP 请求
 (5)获取异步调用返回的数据
 (6)使用 JavaScript 和 DOM 实现局部刷新
-``` 
+```
+
+- 事件是？IE与火狐的事件机制有什么区别？ 如何阻止冒泡？
+
+```
+ 1. 我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。
+ 2. 事件处理机制：IE 是事件冒泡、Firefox 同时支持两种事件模型，也就是：捕获型事件和冒泡型事件；
+ 3. ev.stopPropagation();（旧 ie 的方法 ev.cancelBubble = true;）
+```
