@@ -798,15 +798,15 @@ proName是必选项。一个属性名称的字符串值。
 
 ```
 JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
-它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
+它是基于 JavaScript 的一个子集。数据格式简单, 易于读写, 占用带宽小
 如：{"age":"12", "name":"back"}
 
-JSON字符串转换为JSON对象:
+JSON 字符串转换为 JSON 对象:
 var obj =eval('('+ str +')'); //慎用
 var obj = str.parseJSON();
 var obj = JSON.parse(str);
 
-JSON对象转换为JSON字符串：
+JSON 对象转换为 JSON 字符串：
 var last=obj.toJSONString();
 var last=JSON.stringify(obj);```
 
@@ -838,4 +838,10 @@ ajax 的全称：Asynchronous Javascript And XML。
  1. 我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。
  2. 事件处理机制：IE 是事件冒泡、Firefox 同时支持两种事件模型，也就是：捕获型事件和冒泡型事件；
  3. ev.stopPropagation();（旧 ie 的方法 ev.cancelBubble = true;）
+```
+
+- 如何解决跨域问题?
+
+```
+jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面
 ```

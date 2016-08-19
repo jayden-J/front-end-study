@@ -194,11 +194,11 @@ HTML5？~~
 
 - ~~对JSON的了解？~~
 
--  `[].forEach.call($$("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})` 能解释一下这段代码的意思吗？
+-  ~~`[].forEach.call($$("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})` 能解释一下这段代码的意思吗？~~
 
--  js延迟加载的方式有哪些？
+-  ~~js延迟加载的方式有哪些？~~
 
--  Ajax 是什么? 如何创建一个Ajax？
+-  ~~Ajax 是什么? 如何创建一个Ajax？~~
 
 -  同步和异步的区别?
 
